@@ -7,9 +7,9 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){
   nz = _nz;
 
   // alocação dinâmica de memória
-  Voxel v = new Voxel***[nx];
-  Voxel v[0] = new Voxel**[ny*nx];
-  Voxel v[0][0] = new Voxel*[nz*ny*nz];
+  Voxel v = new Voxel**[nx];
+  Voxel v[0] = new Voxel*[ny*nx];
+  Voxel v[0][0] = new Voxel[nz*ny*nz];
 }
 
 Sculptor::~Sculptor(){
