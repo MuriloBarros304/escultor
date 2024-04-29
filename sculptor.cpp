@@ -11,9 +11,9 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){
   v[0] = new Voxel*[nx*ny];
   v[0][0] = new Voxel[nx*ny*nz];
   // fixação dos ponteiros
-  for (i=0;i<nx;i++) {
+  for(i=0;i<nx;i++){
     m[i] = m[0] + i * ny; // fixar as linhas nos planos
-      for (j=0;j<ny;j++) {
+      for(j=0;j<ny;j++){
         m[i][j] = m[0][0] + (i * ny + j) * nz; // fixar as colunas 
       }
   }
