@@ -7,9 +7,16 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){
   nz = _nz;
 
   // alocação dinâmica de memória
-  Voxel v = new Voxel**[nx];
-  Voxel v[0] = new Voxel*[ny*nx];
-  Voxel v[0][0] = new Voxel[nz*ny*nz];
+  v = new Voxel**[nx];
+  v[0] = new Voxel*[nx*ny];
+  v[0][0] = new Voxel[nx*ny*nz];
+  // fixação dos ponteiros
+  for (i=0;i<nx;i++) {
+    m[i] = m[0] + i * ny; // fixar as linhas nos planos
+      for (j=0;j<ny;j++) {
+        m[i][j] = m[0][0] + (i * ny + j) * nz; // fixar as colunas 
+      }
+  }
 }
 
 Sculptor::~Sculptor(){
