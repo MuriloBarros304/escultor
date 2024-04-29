@@ -8,8 +8,8 @@ private:
   int nx,ny,nz; // Dimensions
   float r,g,b,a; // Current drawing color
 public:
-  Sculptor(int _nx, int _ny, int _nz);
-  ~Sculptor();
+  Sculptor(int _nx, int _ny, int _nz); // Construtor com argumentos
+  ~Sculptor(); // Destrutor
   void setColor(float _r, float _g, float _b, float _a);
   void putVoxel(int x, int y, int z);
   void cutVoxel(int x, int y, int z);
