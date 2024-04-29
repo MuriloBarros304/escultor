@@ -42,4 +42,10 @@ void Sculptor::putVoxel(int x, int y, int z){
   v[x][y][z].a = a;
 }
 
+void Sculptor::cutVoxel(int x, int y, int z){
+  v[x][y][z].show = false;
+}
+
+
+
 
