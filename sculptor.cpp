@@ -6,7 +6,7 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){ // Construtor com argumentos
   nx = _nx;
   ny = _ny;
   nz = _nz;
-  int i, j, k;
+  int i, j;
 
   // alocação dinâmica de memória
   v = new Voxel**[nx];
@@ -47,6 +47,7 @@ void Sculptor::cutVoxel(int x, int y, int z){
 }
 
 void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
+  int i, j, k;
   for(i=x0;i<=x1;i++){
     for(j=y0;j<=y1;j++){
       for(k=z0;k<=z1;k++){
@@ -61,12 +62,27 @@ void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
 }
 
 void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
+  int i, j, k;
   for(i=x0;i<=x1;i++){
     for(j=y0;j<=y1;j++){
       for(k=z0;k<=z1;k++){
         v[i][j][k].show = false; // necessário setar cores?
       }
     }
+  }
+}
+
+void putSphere(int xcenter, int ycenter, int zcenter, int radius){
+  int i, j, k;
+  // (x - a)² + (y - b)² + (z - c)² = r²
+  for(i=(-xcenter);i<=xcenter;i++){ // (i - a)² = r²
+    
+  }
+  for(j=(-ycenter);j<=ycenter;j++){ // (j - a)² = r²
+  
+  }
+  for(k=(-zcenter);k<=zcenter;k++){ // (k - a)² = r²
+  
   }
 }
 
