@@ -48,8 +48,8 @@ void Sculptor::cutVoxel(int x, int y, int z){
 
 void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
   for(i=x0;i<=x1;i++){
-    for(j=x0;j<=x1;j++){
-      for(k=x0;k<=x1;k++){
+    for(j=y0;j<=y1;j++){
+      for(k=z0;k<=z1;k++){
         v[i][j][k].show = true;
         v[i][j][k].r = r;
         v[i][j][k].g = g;
