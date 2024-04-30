@@ -90,4 +90,18 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   }
 }
 
+void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
+  int i, j, k;
+  // (x - a)² + (y - b)² + (z - c)² = r²
+  for(i=(-xcenter);i<=xcenter;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
+    for(j=(-ycenter);j<=ycenter;j++){ // (y - b)² = r²
+      for(k=(-zcenter);k<=zcenter;k++){ // (z - c)² = r²
+        if(i*i == (2*i*xcenter - xcenter*xcenter) and j*j == (2*j*ycenter - ycenter*ycenter) and k*k == (2*k*zcenter - zcenter*zcenter)){
+          v[i][j][k].show = false;
+        }
+      }
+    }
+  }
+}
+
 
