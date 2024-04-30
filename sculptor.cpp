@@ -6,7 +6,7 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){ // Construtor com argumentos
   nx = _nx;
   ny = _ny;
   nz = _nz;
-  int i, j;
+  int i, j, k;
 
   // alocação dinâmica de memória
   v = new Voxel**[nx];
@@ -46,6 +46,22 @@ void Sculptor::cutVoxel(int x, int y, int z){
   v[x][y][z].show = false;
 }
 
+void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
+  for(i=x0;i<=x1;i++){
+    for(j=x0;j<=x1;j++){
+      for(k=x0;k<=x1;k++){
+        v[i][j][k].show = true;
+        v[i][j][k].r = r;
+        v[i][j][k].g = g;
+        v[i][j][k].b = b;
+        v[i][j][k].a = a;
+      }
+    }
+  }
+}
 
+void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
+
+}
 
 
