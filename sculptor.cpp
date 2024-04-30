@@ -75,14 +75,18 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
 void putSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k;
   // (x - a)² + (y - b)² + (z - c)² = r²
-  for(i=(-xcenter);i<=xcenter;i++){ // (i - a)² = r²
-    
-  }
-  for(j=(-ycenter);j<=ycenter;j++){ // (j - a)² = r²
-  
-  }
-  for(k=(-zcenter);k<=zcenter;k++){ // (k - a)² = r²
-  
+  for(i=(-xcenter);i<=xcenter;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
+    for(j=(-ycenter);j<=ycenter;j++){ // (y - b)² = r²
+      for(k=(-zcenter);k<=zcenter;k++){ // (z - c)² = r²
+        if(i*i == (2*i*xcenter - xcenter*xcenter)){
+          v[i][][].show = true;
+          v[i][j][k].r = r;
+          v[i][j][k].g = g;
+          v[i][j][k].b = b;
+          v[i][j][k].a = a;
+        }
+      }
+    }
   }
 }
 
