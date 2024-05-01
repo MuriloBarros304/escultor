@@ -73,12 +73,22 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
 }
 
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
-  int i, j, k;
-  // (x - a)² + (y - b)² + (z - c)² = r²
-  for(i=(xcenter-radius);i<=(xcenter+radius);i++){ 
-    for(j=(ycenter-radius);j<=(ycenter+radius);j++){
-      for(k=(zcenter-radius);k<=(zcenter+radius);k++){ 
-        if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
+  int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
+   // (x - a)² + (y - b)² + (z - c)² = r²
+   // limites da esfera
+  x0 = xcenter-radius; 
+  x1 = xcenter+radius;
+  y0 = ycenter-radius;
+  y1 = ycenter+radius;
+  z0 = zcenter-radius;
+  z1 = zcenter+radius;
+  for(i=(x0); i<=(x1); i++){
+    dx = (i*xcenter)*(i-xcenter); 
+      for(j=(y0); j<=(y1); j++){
+        dy = (j*ycenter)*(j-ycenter);
+          for(k=(z0); k<=(z1); k++){ 
+            dz = (k*zcenter)*(k-zcenter);
+        if(dx + dy + dz == 1){
           v[i][j][k].show = true;
           v[i][j][k].r = r;
           v[i][j][k].g = g;
@@ -91,11 +101,20 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
 }
 
 void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
-  int i, j, k;
-  for(i=(xcenter-radius);i<=(xcenter+radius);i++){ 
-    for(j=(ycenter-radius);j<=(ycenter+radius);j++){
-      for(k=(zcenter-radius);k<=(zcenter+radius);k++){  
-        if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
+  int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
+  x0 = xcenter-radius; 
+  x1 = xcenter+radius;
+  y0 = ycenter-radius;
+  y1 = ycenter+radius;
+  z0 = zcenter-radius;
+  z1 = zcenter+radius;
+  for(i=(x0); i<=(x1); i++){
+    dx = (i*xcenter)*(i-xcenter); 
+      for(j=(y0); j<=(y1); j++){
+        dy = (j*ycenter)*(j-ycenter);
+          for(k=(z0); k<=(z1); k++){ 
+            dz = (k*zcenter)*(k-zcenter);
+        if(dx + dy + dz == 1){
           v[i][j][k].show = false;
         }
       }
@@ -104,20 +123,20 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
 }
 
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
-  int i, j, k, x1, x2, y1, y2, z1, z2, dx, dy, dz;
-  // (x - xc)² / rx + (y - yc)² / ry + (z - zc)² / rz = 1
+  int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
+  // (x - xc)² / rx² + (y - yc)² / ry² + (z - zc)² / rz² = 1
   // limites do elipsóide
-  x0 = xcenter-rx;
+  x0 = xcenter-rx; 
   x1 = xcenter+rx;
   y0 = ycenter-ry;
   y1 = ycenter+ry;
   z0 = zcenter-rz;
   z1 = zcenter+rz;
-  for(i=(x1); i<=(x2); i++){
+  for(i=(x0); i<=(x1); i++){
     dx = (i*xcenter)*(i-xcenter)/(rx*rx); // evitar repetições
-      for(j=(y1); j<=(y2); j++){
+      for(j=(y0); j<=(y1); j++){
         dy = (j*ycenter)*(j-ycenter)/(ry*ry);
-          for(k=(z1); k<=(z2); k++){ 
+          for(k=(z0); k<=(z1); k++){ 
             dz = (k*zcenter)*(k-zcenter)/(rz*rz);
         if(dx + dy + dz == 1){
           v[i][j][k].show = true;
@@ -132,7 +151,7 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 }
 
 void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
-  int i, j, k, x1, x2, y1, y2, z1, z2, dx, dy, dz;
+  int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
   // (x - xc)² / rx + (y - yc)² / ry + (z - zc)² / rz = 1
   // limites do elipsóide
   x0 = xcenter-rx;
@@ -141,11 +160,11 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
   y1 = ycenter+ry;
   z0 = zcenter-rz;
   z1 = zcenter+rz;
-  for(i=(x1); i<=(x2); i++){
+  for(i=(x0); i<=(x1); i++){
     dx = (i*xcenter)*(i-xcenter)/(rx*rx); // evitar repetições
-      for(j=(y1); j<=(y2); j++){
+      for(j=(y0); j<=(y1); j++){
         dy = (j*ycenter)*(j-ycenter)/(ry*ry);
-          for(k=(z1); k<=(z2); k++){ 
+          for(k=(z0); k<=(z1); k++){ 
             dz = (k*zcenter)*(k-zcenter)/(rz*rz);
         if(dx + dy + dz == 1){
           v[i][j][k].show = false;
