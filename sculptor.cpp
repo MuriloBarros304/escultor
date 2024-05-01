@@ -72,13 +72,12 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
   }
 }
 
-// utilizar herança a partir daqui
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k;
   // (x - a)² + (y - b)² + (z - c)² = r²
-  for(i=0;i<=nx;i++){ 
-    for(j=0;j<=ny;j++){
-      for(k=0;k<=nz;k++){ 
+  for(i=(xcenter-radius);i<=(xcenter+radius);i++){ 
+    for(j=(ycenter-radius);j<=(ycenter+radius);j++){
+      for(k=(zcenter-radius);k<=(zcenter+radius);k++){ 
         if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
           v[i][j][k].show = true;
           v[i][j][k].r = r;
