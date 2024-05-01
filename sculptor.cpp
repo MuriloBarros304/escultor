@@ -66,18 +66,19 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
   for(i=x0;i<=x1;i++){
     for(j=y0;j<=y1;j++){
       for(k=z0;k<=z1;k++){
-        v[i][j][k].show = false; // necessário setar cores?
+        v[i][j][k].show = false; 
       }
     }
   }
 }
 
+// utilizar herança a partir daqui
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k;
   // (x - a)² + (y - b)² + (z - c)² = r²
-  for(i=(-xcenter);i<=xcenter;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
-    for(j=(-ycenter);j<=ycenter;j++){ // (y - b)² = r²
-      for(k=(-zcenter);k<=zcenter;k++){ // (z - c)² = r²
+  for(i=0;i<=nx;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
+    for(j=0;j<=ny;j++){ // (y - b)² = r²
+      for(k=0;k<=nz;k++){ // (z - c)² = r²
         if(i*i == (2*i*xcenter - xcenter*xcenter) and j*j == (2*j*ycenter - ycenter*ycenter) and k*k == (2*k*zcenter - zcenter*zcenter)){
           v[i][j][k].show = true;
           v[i][j][k].r = r;
@@ -93,9 +94,9 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
 void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k;
   // (x - a)² + (y - b)² + (z - c)² = r²
-  for(i=(-xcenter);i<=xcenter;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
-    for(j=(-ycenter);j<=ycenter;j++){ // (y - b)² = r²
-      for(k=(-zcenter);k<=zcenter;k++){ // (z - c)² = r²
+  for(i=0;i<=nx;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
+    for(j=0;j<=ny;j++){ // (y - b)² = r²
+      for(k=0;k<=nz;k++){ // (z - c)² = r²
         if(i*i == (2*i*xcenter - xcenter*xcenter) and j*j == (2*j*ycenter - ycenter*ycenter) and k*k == (2*k*zcenter - zcenter*zcenter)){
           v[i][j][k].show = false;
         }
