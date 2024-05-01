@@ -79,7 +79,7 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   for(i=0;i<=nx;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
     for(j=0;j<=ny;j++){ // (y - b)² = r²
       for(k=0;k<=nz;k++){ // (z - c)² = r²
-        if(i*i == (2*i*xcenter - xcenter*xcenter) and j*j == (2*j*ycenter - ycenter*ycenter) and k*k == (2*k*zcenter - zcenter*zcenter)){
+        if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
           v[i][j][k].show = true;
           v[i][j][k].r = r;
           v[i][j][k].g = g;
@@ -97,7 +97,7 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   for(i=0;i<=nx;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
     for(j=0;j<=ny;j++){ // (y - b)² = r²
       for(k=0;k<=nz;k++){ // (z - c)² = r²
-        if(i*i == (2*i*xcenter - xcenter*xcenter) and j*j == (2*j*ycenter - ycenter*ycenter) and k*k == (2*k*zcenter - zcenter*zcenter)){
+        if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
           v[i][j][k].show = false;
         }
       }
