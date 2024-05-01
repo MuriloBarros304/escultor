@@ -76,9 +76,9 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k;
   // (x - a)² + (y - b)² + (z - c)² = r²
-  for(i=0;i<=nx;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
-    for(j=0;j<=ny;j++){ // (y - b)² = r²
-      for(k=0;k<=nz;k++){ // (z - c)² = r²
+  for(i=0;i<=nx;i++){ 
+    for(j=0;j<=ny;j++){
+      for(k=0;k<=nz;k++){ 
         if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
           v[i][j][k].show = true;
           v[i][j][k].r = r;
@@ -93,10 +93,9 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
 
 void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k;
-  // (x - a)² + (y - b)² + (z - c)² = r²
-  for(i=0;i<=nx;i++){ // (x - a)² = r² -> x² - 2xa + a² = r² -> x² = 2 * x * a - a * a
-    for(j=0;j<=ny;j++){ // (y - b)² = r²
-      for(k=0;k<=nz;k++){ // (z - c)² = r²
+  for(i=0;i<=nx;i++){ 
+    for(j=0;j<=ny;j++){ 
+      for(k=0;k<=nz;k++){ 
         if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
           v[i][j][k].show = false;
         }
@@ -105,4 +104,32 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   }
 }
 
+void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
+  int i, j, k;
+  for(i=0;i<=nx;i++){ 
+    for(j=0;j<=ny;j++){ 
+      for(k=0;k<=nz;k++){ 
+        if(1 == ((i*xcenter)*(i-xcenter))/rx + ((j*ycenter)*(j-ycenter))/ry + ((k*zcenter)*(k-zcenter)/rz)){
+          v[i][j][k].show = true;
+          v[i][j][k].r = r;
+          v[i][j][k].g = g;
+          v[i][j][k].b = b;
+          v[i][j][k].a = a;
+        }
+      }
+    }
+  }
+}
 
+void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
+  int i, j, k;
+  for(i=0;i<=nx;i++){ 
+    for(j=0;j<=ny;j++){ 
+      for(k=0;k<=nz;k++){ 
+        if(1 == ((i*xcenter)*(i-xcenter))/rx + ((j*ycenter)*(j-ycenter))/ry + ((k*zcenter)*(k-zcenter)/rz)){
+          v[i][j][k].show = false;
+        }
+      }
+    }
+  }
+}
