@@ -92,9 +92,9 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
 
 void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k;
-  for(i=0;i<=nx;i++){ 
-    for(j=0;j<=ny;j++){ 
-      for(k=0;k<=nz;k++){ 
+  for(i=(xcenter-radius);i<=(xcenter+radius);i++){ 
+    for(j=(ycenter-radius);j<=(ycenter+radius);j++){
+      for(k=(zcenter-radius);k<=(zcenter+radius);k++){  
         if(radius*radius == (i*xcenter)*(i-xcenter) + (j*ycenter)*(j-ycenter) + (k*zcenter)*(k-zcenter)){
           v[i][j][k].show = false;
         }
@@ -106,9 +106,9 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
   int i, j, k;
   // (x - xc)² / rx + (y - yc)² / ry + (z - zc)² / rz = 1
-  for(i=0;i<=nx;i++){ 
-    for(j=0;j<=ny;j++){ 
-      for(k=0;k<=nz;k++){ 
+  for(i=(xcenter-rx);i<=(xcenter+rx);i++){ 
+    for(j=(ycenter-ry);j<=(ycenter+ry);j++){
+      for(k=(zcenter-rz);k<=(zcenter+rz);k++){ 
         if(1 == ((i*xcenter)*(i-xcenter))/rx + ((j*ycenter)*(j-ycenter))/ry + ((k*zcenter)*(k-zcenter)/rz)){
           v[i][j][k].show = true;
           v[i][j][k].r = r;
@@ -123,9 +123,9 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 
 void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
   int i, j, k;
-  for(i=0;i<=nx;i++){ 
-    for(j=0;j<=ny;j++){ 
-      for(k=0;k<=nz;k++){ 
+  for(i=(xcenter-rx);i<=(xcenter+rx);i++){ 
+    for(j=(ycenter-ry);j<=(ycenter+ry);j++){
+      for(k=(zcenter-rz);k<=(zcenter+rz);k++){ 
         if(1 == ((i*xcenter)*(i-xcenter))/rx + ((j*ycenter)*(j-ycenter))/ry + ((k*zcenter)*(k-zcenter)/rz)){
           v[i][j][k].show = false;
         }
