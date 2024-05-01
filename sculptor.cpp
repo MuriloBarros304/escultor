@@ -106,6 +106,7 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
 
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
   int i, j, k;
+  // (x - xc)² / rx + (y - yc)² / ry + (z - zc)² / rz = 1
   for(i=0;i<=nx;i++){ 
     for(j=0;j<=ny;j++){ 
       for(k=0;k<=nz;k++){ 
