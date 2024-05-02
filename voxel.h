@@ -3,7 +3,7 @@
 
 struct Voxel {
   float r,g,b; // Cores
-  float a; // Trasnparencia
+  float a; // Transparencia
   bool show; // Incluido ou nao
 };
 
