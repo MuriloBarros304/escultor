@@ -136,10 +136,10 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
   z0 = zcenter - rz;
   z1 = zcenter + rz;
   for (i = x0; i <= x1; i++) {
+    dx = (i - xcenter) * (i - xcenter);
     for (j = y0; j <= y1; j++) {
+      dy = (j - ycenter) * (j - ycenter);
       for (k = z0; k <= z1; k++) { 
-        dx = (i - xcenter) * (i - xcenter);
-        dy = (j - ycenter) * (j - ycenter);
         dz = (k - zcenter) * (k - zcenter);
         if ((dx / (rx * rx) + dy / (ry * ry) + dz / (rz * rz)) <= 1) {
           v[i][j][k].show = true;
