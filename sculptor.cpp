@@ -184,7 +184,7 @@ void Sculptor::writeOFF(const char *filename){
   std::ofstream fout;
 
   // contagem de voxels
-  for(i=0;i<=nx;i++){
+  for(i=0;i<nx;i++){
     for(j=0;j<ny;j++){
       for(k=0;k<nz;k++){
         if(v[i][j][k].show == true){
@@ -195,13 +195,12 @@ void Sculptor::writeOFF(const char *filename){
   }
   // abrir arquivo
   fout.open(filename);
-  if(fout.is_open() == false){
-    std::cerr << "Erro ao abrir o arquivo \n";
-    exit(1);
+  if (!fout.is_open()) {
+    throw std::runtime_error("Failed to open file");
   }
   // escrever no arquivo
   fout << "OFF\n";
-  fout << 8 * nVoxel << " " << 6 * nVoxel << "\n";
+  fout << 8 * nVoxel << " " << 6 * nVoxel << " " << 0 << "\n";
   fout.close();
 }
     
