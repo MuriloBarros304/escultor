@@ -1,6 +1,7 @@
 #include "sculptor.h"
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 Sculptor::Sculptor(int _nx, int _ny, int _nz){ // Construtor com argumentos
   nx = _nx;
@@ -180,6 +181,7 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 
 void Sculptor::writeOFF(const char *filename){
   int nVoxel = 0, i, j, k;
+  std::ofstream fout;
 
   // contagem de voxels
   for(i=0;i<=nx;i++){
@@ -191,5 +193,15 @@ void Sculptor::writeOFF(const char *filename){
       }
     }
   }
+  // abrir arquivo
+  fout.open(filename);
+  if(fout.is_open() == false){
+    std::cerr << "Erro ao abrir o arquivo \n";
+    exit(1);
+  }
+  // escrever no arquivo
+  fout << "OFF\n";
+  fout << 8 * nVoxel << " " << 6 * nVoxel << "\n";
+  fout.close();
 }
     
