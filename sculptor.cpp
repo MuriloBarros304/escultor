@@ -179,7 +179,17 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 }
 
 void Sculptor::writeOFF(const char *filename){
-  int nVoxel;
-  nVoxel = nx * ny * nz;
+  int nVoxel = 0, i, j, k;
+
+  // contagem de voxels
+  for(i=0;i<=nx;i++){
+    for(j=0;j<ny;j++){
+      for(k=0;k<nz;k++){
+        if(v[i][j][k].show == true){
+          nVoxel++;
+        }
+      }
+    }
+  }
 }
     
