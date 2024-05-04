@@ -178,8 +178,8 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
   }
 }
 
-// a partir daqui o código foi tirado de outros alunos, para testar as funções acima
 void Sculptor::writeOFF(const char *filename){
-  
+  int nVoxel;
+  nVoxel = nx * ny * nz;
 }
     
