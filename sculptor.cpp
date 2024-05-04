@@ -124,28 +124,29 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   }
 }
 
-void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
-  int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
+void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
+  int i, j, k, x0, x1, y0, y1, z0, z1;
+  double dx, dy, dz;
   // (x - xc)² / rx² + (y - yc)² / ry² + (z - zc)² / rz² = 1
-  // limites do elipsóide
-  x0 = xcenter-rx; 
-  x1 = xcenter+rx;
-  y0 = ycenter-ry;
-  y1 = ycenter+ry;
-  z0 = zcenter-rz;
-  z1 = zcenter+rz;
-  for(i=x0; i<=x1; i++){
-    dx = ((i-xcenter)*(i-xcenter))/(rx*rx); 
-      for(j=y0; j<=y1; j++){
-        dy = ((j-ycenter)*(j-ycenter))/(ry*ry);
-          for(k=z0; k<=z1; k++){ 
-            dz = ((k-zcenter)*(k-zcenter))/(rz*rz);
-            if((dx + dy + dz) <= 1){
-              v[i][j][k].show = true;
-              v[i][j][k].r = r;
-              v[i][j][k].g = g;
-              v[i][j][k].b = b;
-              v[i][j][k].a = a;
+  // limites do elipsoide
+  x0 = xcenter - rx; 
+  x1 = xcenter + rx;
+  y0 = ycenter - ry;
+  y1 = ycenter + ry;
+  z0 = zcenter - rz;
+  z1 = zcenter + rz;
+  for (i = x0; i <= x1; i++) {
+    for (j = y0; j <= y1; j++) {
+      for (k = z0; k <= z1; k++) { 
+        dx = (i - xcenter) * (i - xcenter);
+        dy = (j - ycenter) * (j - ycenter);
+        dz = (k - zcenter) * (k - zcenter);
+        if ((dx / (rx * rx) + dy / (ry * ry) + dz / (rz * rz)) <= 1) {
+          v[i][j][k].show = true;
+          v[i][j][k].r = r;
+          v[i][j][k].g = g;
+          v[i][j][k].b = b;
+          v[i][j][k].a = a;
         }
       }
     }
