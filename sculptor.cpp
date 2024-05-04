@@ -153,24 +153,25 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
   }
 }
 
-void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
-  int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
-  // (x - xc)² / rx + (y - yc)² / ry + (z - zc)² / rz = 1
-  // limites do elipsóide
-  x0 = xcenter-rx;
-  x1 = xcenter+rx;
-  y0 = ycenter-ry;
-  y1 = ycenter+ry;
-  z0 = zcenter-rz;
-  z1 = zcenter+rz;
-  for(i=(x0); i<=(x1); i++){
-    dx = (i-xcenter)*(i-xcenter)/(rx*rx); // evitar repetições
-      for(j=(y0); j<=(y1); j++){
-        dy = (j-ycenter)*(j-ycenter)/(ry*ry);
-          for(k=(z0); k<=(z1); k++){ 
-            dz = (k-zcenter)*(k-zcenter)/(rz*rz);
-              if(dx + dy + dz <= 1){
-                v[i][j][k].show = false;
+void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
+  int i, j, k, x0, x1, y0, y1, z0, z1;
+  double dx, dy, dz;
+  // (x - xc)² / rx² + (y - yc)² / ry² + (z - zc)² / rz² = 1
+  // limites do elipsoide
+  x0 = xcenter - rx; 
+  x1 = xcenter + rx;
+  y0 = ycenter - ry;
+  y1 = ycenter + ry;
+  z0 = zcenter - rz;
+  z1 = zcenter + rz;
+  for (i = x0; i <= x1; i++) {
+    dx = (i - xcenter) * (i - xcenter);
+    for (j = y0; j <= y1; j++) {
+      dy = (j - ycenter) * (j - ycenter);
+      for (k = z0; k <= z1; k++) { 
+        dz = (k - zcenter) * (k - zcenter);
+        if ((dx / (rx * rx) + dy / (ry * ry) + dz / (rz * rz)) <= 1) {
+          v[i][j][k].show = false;
         }
       }
     }
@@ -178,99 +179,7 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 }
 
 // a partir daqui o código foi tirado de outros alunos, para testar as funções acima
-void Sculptor::writeOFF(const char *filename)
-{
-    std::ofstream fout;
-    int nVoxel = 0, ref = 0;
-    fout.open(filename);
-
-    if (fout.is_open())
-    {
-        std::cout << "Gravando o arquivo...\n";
-    }
-    else
-    {
-        std::cout << "Erro na abertura do arquivo\n";
-        std::cout << "Pressione Enter para fechar a janela.\n";
-        std::cin.get();
-        exit(1); // Encerrando o programa
-    }
-
-    for (int i = 0; i < nz; i++)
-    {
-        for (int j = 0; j < nx; j++)
-        {
-            for (int k = 0; k < ny; k++)
-            {
-                if (v[i][j][k].show)
-                {
-                    nVoxel++;
-                }
-            }
-        }
-    }
-
-    fout << "OFF" << std::endl;
-    fout << nVoxel * 8 << " " << nVoxel * 6 << " " << 0 << std::endl;
-
-    for (int i = 0; i < nz; i++)
-    {
-        for (int j = 0; j < nx; j++)
-        {
-            for (int k = 0; k < ny; k++)
-            {
-                if (v[i][j][k].show)
-                {
-                    fout << i - 0.5 << " " << j + 0.5 << " " << k - 0.5 << std::endl;
-                    fout << i - 0.5 << " " << j - 0.5 << " " << k - 0.5 << std::endl;
-                    fout << i + 0.5 << " " << j - 0.5 << " " << k - 0.5 << std::endl;
-                    fout << i + 0.5 << " " << j + 0.5 << " " << k - 0.5 << std::endl;
-                    fout << i - 0.5 << " " << j + 0.5 << " " << k + 0.5 << std::endl;
-                    fout << i - 0.5 << " " << j - 0.5 << " " << k + 0.5 << std::endl;
-                    fout << i + 0.5 << " " << j - 0.5 << " " << k + 0.5 << std::endl;
-                    fout << i + 0.5 << " " << j + 0.5 << " " << k + 0.5 << std::endl;
-                }
-            }
-        }
-    }
-
-    for (int i = 0; i < nz; i++)
-    {
-        for (int j = 0; j < nx; j++)
-        {
-            for (int k = 0; k < ny; k++)
-            {
-                if (v[i][j][k].show)
-                {
-                    fout << 4 << " " << ref + 0 << " " << ref + 3 << " " << ref + 2 << " " << ref + 1 << " "
-                         << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << std::endl;
-
-                    fout << 4 << " " << ref + 4 << " " << ref + 5 << " " << ref + 6 << " " << ref + 7 << " "
-                         << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << std::endl;
-
-                    fout << 4 << " " << ref + 0 << " " << ref + 1 << " " << ref + 5 << " " << ref + 4 << " "
-                         << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << std::endl;
-
-                    fout << 4 << " " << ref + 0 << " " << ref + 4 << " " << ref + 7 << " " << ref + 3 << " "
-                         << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << std::endl;
-
-                    fout << 4 << " " << ref + 3 << " " << ref + 7 << " " << ref + 6 << " " << ref + 2 << " "
-                         << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << std::endl;
-
-                    fout << 4 << " " << ref + 1 << " " << ref + 2 << " " << ref + 6 << " " << ref + 5 << " "
-                         << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << std::endl;
-                         
-                    ref += 8;
-                }
-            }
-        }
-    }
-
-    if (fout.is_open())
-    {
-        std::cout << "Arquivo gerado com sucesso!\n";
-        std::cout << "Pressione Enter para fechar a janela.\n";
-        std::cin.get();
-        exit(1); // Encerrando o programa
-    }
+void Sculptor::writeOFF(const char *filename){
+  
 }
+    
