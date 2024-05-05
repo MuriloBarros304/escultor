@@ -180,7 +180,7 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 }
 
 void Sculptor::writeOFF(const char *filename){
-  int nVoxel = 0, va = 0, i, j, k;
+  int nVoxel = 0, vf = 0, i, j, k;
   std::ofstream fout;
 
   // contagem de voxels
@@ -221,13 +221,13 @@ void Sculptor::writeOFF(const char *filename){
     for(j=0;j<ny;j++){
       for(k=0;k<nz;k++){
         if(v[i][j][k].show){ 
-          fout << 4 + va << " " << 0 + va << " " << 3 + va << " " << 2 + va << " " << 1 + va << " " << std::setprecision(2) << v[0][0][0].r << " " << v[0][0][0].g << " " << v[0][0][0].b << " " << v[0][0][0].a << "\n";
-          fout << 4 + va << " " << 4 + va << " " << 5 + va << " " << 6 + va << " " << 7 + va << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << [i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 + va << " " << 0 + va << " " << 1 + va << " " << 5 + va << " " << 4 + va << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << [i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 0 << " " << 4 << " " << 7 << " " << 3 << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << [i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 3 << " " << 7 << " " << 6 << " " << 2 << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << [i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 1 << " " << 2 << " " << 6 << " " << 5 << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << [i][j][k].b << " " << v[i][j][k].a << "\n";
-          va += 8;
+          fout << 4 + vf << " " << 0 + vf << " " << 3 + vf << " " << 2 + vf << " " << 1 + vf << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
+          fout << 4 + vf << " " << 4 + vf << " " << 5 + vf << " " << 6 + vf << " " << 7 + vf << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
+          fout << 4 + vf << " " << 0 + vf << " " << 1 + vf << " " << 5 + vf << " " << 4 + vf << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
+          fout << 4 + vf << " " << 0 + vf << " " << 4 + vf << " " << 7 + vf << " " << 3 + vf << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
+          fout << 4 + vf << " " << 3 + vf << " " << 7 + vf << " " << 6 + vf << " " << 2 + vf << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
+          fout << 4 + vf << " " << 1 + vf << " " << 2 + vf << " " << 6 + vf << " " << 5 + vf << " " << v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
+          vf += 8;
         }
       }
     }
