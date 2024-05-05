@@ -201,6 +201,14 @@ void Sculptor::writeOFF(const char *filename){
   // escrever no arquivo
   fout << "OFF\n";
   fout << 8 * nVoxel << " " << 6 * nVoxel << " " << 0 << "\n";
+  fout << -0.5 << " " << 0.5 << " " << -0.5;
+  fout << -0.5 << " " << -0.5 << " " << -0.5;
+  fout << 0.5 << " " << -0.5 << " " << -0.5;
+  fout << 0.5 << " " << 0.5 << " " << -0.5;
+  fout << -0.5 << " " << 0.5 << " " << 0.5;
+  fout << -0.5 << " " << -0.5 << " " << 0.5;
+  fout << 0.5 << " " << -0.5 << " " << 0.5;
+  fout << 0.5 << " " << 0.5 << " " << 0.5;
   fout.close();
 }
     
