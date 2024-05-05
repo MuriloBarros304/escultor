@@ -1,7 +1,7 @@
 #include "sculptor.h"
 
 int main(void){
-  Sculptor teste(100, 100, 100);
+  Sculptor teste(10, 10, 10);
   teste.setColor(1.0, 0.0, 0.0, 1.0);
   teste.putVoxel(0,0,0);
   //teste.putVoxel(1, 1, 1);
