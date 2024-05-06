@@ -9,6 +9,8 @@ int main(void){
   teste.putVoxel(20, 20, 20);
   teste.setColor(0.1,0.1,0.9, 0.9);
   teste.putEllipsoid(10,10,10,5,6,9);
+  teste.setColor(0.5,0.9,0.5,0.9);
+  teste.cutBox(5, 15, 3, 18, 2, 19);
   //teste.putVoxel(1, 1, 1);
   //teste.putVoxel(5, 5, 5);
   //teste.putEllipsoid(25, 50, 50, 10, 20, 25);

@@ -240,6 +240,7 @@ void Sculptor::writeOFF(const char *filename){
       }
     }
   }
+std::cout << "Arquivo salvo\n";
 fout.close();
 }
     
