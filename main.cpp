@@ -27,7 +27,7 @@ int main(void){
   quarto.setColor(0.9, 0.6, 0.1, 0.9);
   quarto.putBox(31, 96, 14, 20, 3, 29);
   quarto.setColor(0.9, 0.9, 0.9, 0.9);
-  quarto.putBox(86, 96, 21, 23, 3, 29);
+  quarto.putBox(86, 96, 21, 23, 4, 28);
   quarto.setColor(0.39, 0.18, 0.01, 0.9); // escrivaninha
   quarto.putBox(77, 97, 30, 32, 50, 90);
   quarto.putBox(77, 79, 2, 29, 50, 52);
@@ -60,19 +60,20 @@ int main(void){
   quarto.putBox(3, 11, 43, 57, 60, 60);
   quarto.putBox(3, 11, 43, 57, 53, 53);
   quarto.putBox(3, 11, 59, 73, 73, 73);
-  quarto.setColor(0.32, 0.75, 0.86, 0.9);
+  quarto.setColor(0.2, 0.12, 0.35, 0.9);
   quarto.putBox(3, 11, 27, 41, 37, 38);
   quarto.putBox(3, 11, 27, 41, 42, 42);
   quarto.putBox(3, 11, 59, 73, 69, 69);
   quarto.putBox(3, 11, 43, 57, 52, 52);
   quarto.putBox(3, 11, 43, 57, 61, 61);
   quarto.putBox(3, 11, 59, 73, 71, 71);
-  quarto.setColor(0.3, 0.64, 0.2, 0.9);
+  quarto.setColor(0.1, 0.64, 0.1, 0.9);
   quarto.putBox(3, 11, 27, 37, 39, 39);
   quarto.putBox(3, 11, 27, 41, 42, 42);
   quarto.putBox(3, 11, 59, 70, 65, 65);
   quarto.putBox(3, 11, 43, 57, 56, 56);
   quarto.putBox(3, 11, 43, 57, 62, 62);
   quarto.putBox(3, 11, 59, 73, 72, 72);
+
   quarto.writeOFF("quarto.off");
 }
