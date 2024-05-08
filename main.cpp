@@ -14,11 +14,15 @@ int main(void){
   quarto.cutBox(3, 13, 27, 41, 33, 47);
   quarto.setColor(0.39, 0.18, 0.01, 0.9); // janela
   quarto.putBox(34, 68, 34, 68, 0, 3);
-  quarto.setColor(0.4, 0.4, 0.9, 0.1); // verificar transparencia
-  quarto.putBox(36, 50, 36, 50, 0, 3);
-  quarto.putBox(36, 50, 52, 66, 0, 3);
-  quarto.putBox(52, 66, 52, 66, 0, 3);
-  quarto.putBox(52, 66, 36, 50, 0, 3);
+  quarto.setColor(0.4, 0.4, 0.9, 0.3); // verificar transparencia
+  quarto.cutBox(36, 50, 36, 50, 0, 3);
+  quarto.cutBox(36, 50, 52, 66, 0, 3);
+  quarto.cutBox(52, 66, 52, 66, 0, 3);
+  quarto.cutBox(52, 66, 36, 50, 0, 3);
+  quarto.putBox(36, 50, 36, 50, 2, 2);
+  quarto.putBox(36, 50, 52, 66, 2, 2);
+  quarto.putBox(52, 66, 52, 66, 2, 2);
+  quarto.putBox(52, 66, 36, 50, 2, 2);
   quarto.setColor(0.39, 0.18, 0.01, 0.9); // cama
   quarto.putBox(30, 97, 10, 14, 2, 30); 
   quarto.putBox(97, 97, 14, 28, 2, 30);
