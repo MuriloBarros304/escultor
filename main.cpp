@@ -4,7 +4,7 @@ int main(void){
   Sculptor quarto(100, 100, 100);
   quarto.setColor(0.9, 0.9, 0.9, 0.9); // paredes
   quarto.putBox(0, 99, 0, 99, 0, 99);
-  quarto.cutBox(2, 97, 2, 99, 2, 99);
+  quarto.cutBox(2, 97, 1, 99, 2, 99);
   quarto.setColor(0.99, 0.99, 0.10, 0.9);
   quarto.putBox(2, 12, 42, 58, 48, 64); // estantes
   quarto.cutBox(3, 13, 43, 57, 49, 63);
@@ -14,7 +14,7 @@ int main(void){
   quarto.cutBox(3, 13, 27, 41, 33, 47);
   quarto.setColor(0.39, 0.18, 0.01, 0.9); // janela
   quarto.putBox(34, 68, 34, 68, 0, 3);
-  quarto.setColor(0.2, 0.2, 0.9, 0.001);
+  quarto.setColor(0.4, 0.4, 0.9, 0.1); // verificar transparencia
   quarto.putBox(36, 50, 36, 50, 0, 3);
   quarto.putBox(36, 50, 52, 66, 0, 3);
   quarto.putBox(52, 66, 52, 66, 0, 3);
@@ -45,7 +45,7 @@ int main(void){
   quarto.putBox(88, 90, 2, 15, 53, 55);
   quarto.putBox(88, 90, 2, 15, 66, 68);
   quarto.setColor(0.9, 0.9, 0.9, 0.9); // papel
-  quarto.putBox(78, 90, 33, 33, 80, 90);
+  quarto.putBox(78, 90, 33, 33, 80, 89);
   quarto.setColor(0.1, 0.1, 0.1, 0.9); // lapis
   quarto.putBox(78, 82, 34, 34, 81, 81);
   quarto.setColor(0.1, 0.1, 0.1, 0.9); // notebook
@@ -79,6 +79,17 @@ int main(void){
   quarto.putBox(3, 11, 43, 57, 56, 56);
   quarto.putBox(3, 11, 43, 57, 62, 62);
   quarto.putBox(3, 11, 59, 73, 72, 72);
+  quarto.setColor(0.9, 0.8, 0.7, 0.9);
+  quarto.putBox(2, 97, 1, 1, 2, 99);
+  quarto.setColor(0.1, 0.1, 0.1, 0.5);
+  quarto.putBox(2, 97, 1, 1, 80, 80);
+  quarto.putBox(2, 97, 1, 1, 60, 60);
+  quarto.putBox(2, 97, 1, 1, 40, 40);
+  quarto.putBox(2, 97, 1, 1, 20, 20);
+  quarto.putBox(80, 80, 1, 1, 2, 99);
+  quarto.putBox(60, 60, 1, 1, 2, 99);
+  quarto.putBox(40, 40, 1, 1, 2, 99);
+  quarto.putBox(20, 20, 1, 1, 2, 99);
 
   quarto.writeOFF("quarto.off");
 }
