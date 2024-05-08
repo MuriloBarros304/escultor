@@ -182,7 +182,7 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 }
 
 void Sculptor::writeOFF(const char *filename){
-  int nVoxel = 0, vf = 0, i, j, k;
+  int nVoxel = 0, f = 0, i, j, k;
   std::ofstream fout;
 
   // contagem de voxels
@@ -223,19 +223,19 @@ void Sculptor::writeOFF(const char *filename){
     for(j=0;j<ny;j++){
       for(k=0;k<nz;k++){
         if(v[i][j][k].show){ 
-          fout << 4 << " " << 0 + vf << " " << 3 + vf << " " << 2 + vf << " " << 1 + vf << " " << 
+          fout << 4 << " " << 0 + f << " " << 3 + f << " " << 2 + f << " " << 1 + f << " " << 
           v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 4 + vf << " " << 5 + vf << " " << 6 + vf << " " << 7 + vf << " " << 
+          fout << 4 << " " << 4 + f << " " << 5 + f << " " << 6 + f << " " << 7 + f << " " << 
           v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 0 + vf << " " << 1 + vf << " " << 5 + vf << " " << 4 + vf << " " << 
+          fout << 4 << " " << 0 + f << " " << 1 + f << " " << 5 + f << " " << 4 + f << " " << 
           v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 0 + vf << " " << 4 + vf << " " << 7 + vf << " " << 3 + vf << " " << 
+          fout << 4 << " " << 0 + f << " " << 4 + f << " " << 7 + f << " " << 3 + f << " " << 
           v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 3 + vf << " " << 7 + vf << " " << 6 + vf << " " << 2 + vf << " " << 
+          fout << 4 << " " << 3 + f << " " << 7 + f << " " << 6 + f << " " << 2 + f << " " << 
           v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
-          fout << 4 << " " << 1 + vf << " " << 2 + vf << " " << 6 + vf << " " << 5 + vf << " " << 
+          fout << 4 << " " << 1 + f << " " << 2 + f << " " << 6 + f << " " << 5 + f << " " << 
           v[i][j][k].r << " " << v[i][j][k].g << " " << v[i][j][k].b << " " << v[i][j][k].a << "\n";
-          vf += 8;
+          f += 8;
         }
       }
     }

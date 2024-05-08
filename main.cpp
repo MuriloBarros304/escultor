@@ -79,8 +79,8 @@ int main(void){
   quarto.putBox(3, 11, 43, 57, 56, 56);
   quarto.putBox(3, 11, 43, 57, 62, 62);
   quarto.putBox(3, 11, 59, 73, 72, 72);
-  quarto.setColor(0.9, 0.8, 0.7, 0.9);
-  quarto.putBox(2, 97, 1, 1, 2, 99);
+  quarto.setColor(0.9, 0.8, 0.7, 0.9); // piso
+  quarto.putBox(2, 97, 1, 1, 2, 99); 
   quarto.setColor(0.1, 0.1, 0.1, 0.5);
   quarto.putBox(2, 97, 1, 1, 80, 80);
   quarto.putBox(2, 97, 1, 1, 60, 60);
