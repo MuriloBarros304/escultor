@@ -3,6 +3,13 @@
 #include <fstream>
 #include <iomanip>
 
+
+/**
+ * @brief Recebe as coordenadas do tamanho da modelagem e aloca memória para a criação de uma matriz de três dimensões
+ * @param _nx Número de voxels no eixo x
+ * @param _ny Número de voxels no eixo y
+ * @param _nz Número de voxels no eixo z
+*/
 Sculptor::Sculptor(int _nx, int _ny, int _nz){ // Construtor com argumentos
   nx = _nx;
   ny = _ny;

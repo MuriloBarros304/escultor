@@ -1,5 +1,9 @@
 #include "sculptor.h"
 
+/**
+ * \mainpage 
+ * @brief Escultor 3D utilizando blocos com C++, projeto requerido na segunda unidade da disciplina: Programação Avançada no Departamento de Engenharia de Computação e Automação da Universidade Federal do Rio Grande do Norte
+*/
 int main(void){
   Sculptor quarto(100, 100, 100);
   quarto.setColor(0.9, 0.9, 0.9, 0.9); // paredes
