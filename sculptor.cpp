@@ -5,7 +5,7 @@
 
 
 /**
- * @brief Recebe as coordenadas do tamanho da modelagem e aloca memória para a criação de uma matriz de três dimensões
+ * @brief Construtor da classe, recebe as coordenadas do tamanho da modelagem e aloca memória para a criação de uma matriz de três dimensões
  * @param _nx Número de voxels no eixo x
  * @param _ny Número de voxels no eixo y
  * @param _nz Número de voxels no eixo z
@@ -31,12 +31,18 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){ // Construtor com argumentos
   }
 }
 
+/**
+ * @brief Destrutor da classe
+*/
 Sculptor::~Sculptor(){
   delete[] v[0][0];
   delete[] v[0];
   delete[] v;
 }
 
+/**
+ * @brief Define a cor e transparência nos próximos comandos
+*/
 void Sculptor::setColor(float r, float g, float b, float a){
   this->r = r; // Red
   this->g = g; // Green

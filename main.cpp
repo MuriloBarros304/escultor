@@ -57,8 +57,8 @@ int main(void){
   quarto.setColor(0.1, 0.1, 0.1, 0.9); // lapis
   quarto.putBox(78, 82, 34, 34, 81, 81);
   quarto.setColor(0.1, 0.1, 0.1, 0.9); // notebook
-  quarto.putBox(78, 88, 33, 33, 52, 72);
-  quarto.putBox(88, 88, 33, 43, 52, 72);
+  quarto.putBox(78, 88, 33, 33, 52, 71);
+  quarto.putBox(88, 88, 33, 43, 52, 71);
   quarto.setColor(0.9, 0.1, 0.1, 0.9); // livros
   quarto.putBox(3, 11, 43, 57, 50, 50);
   quarto.putBox(3, 11, 43, 57, 50, 50);
@@ -99,5 +99,5 @@ int main(void){
   quarto.putBox(40, 40, 1, 1, 2, 99);
   quarto.putBox(20, 20, 1, 1, 2, 99);
 
-  quarto.writeOFF("quarto.off");
+  quarto.writeOFF("../quarto.off"); // salvar no diretório acima
 }
