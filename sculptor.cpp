@@ -51,10 +51,11 @@ void Sculptor::setColor(float r, float g, float b, float a){
 }
 
 /**
- * @brief Adiciona um único voxel à escultura, tornando-o visível. É necessário ter uma cor definida anteriormente
+ * @brief Adiciona um único voxel à escultura 
  * @param x Endereço no eixo x
  * @param y Endereço no eixo y
  * @param z Endereço no eixo z 
+ * @warning É necessário ter uma cor definida anteriormente
 */
 void Sculptor::putVoxel(int x, int y, int z){
   v[x][y][z].show = true;
@@ -65,7 +66,7 @@ void Sculptor::putVoxel(int x, int y, int z){
 }
 
 /**
- * @brief Corta um voxel tornando-o invisível
+ * @brief Corta um voxel
  * @param x Endereço no eixo x
  * @param y Endereço no eixo y
  * @param z Endereço no eixo z
