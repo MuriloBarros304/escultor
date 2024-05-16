@@ -55,7 +55,7 @@ int main(void){
   quarto.setColor(0.9, 0.9, 0.9, 0.9); // papel
   quarto.putBox(78, 90, 33, 33, 80, 89);
   quarto.setColor(0.1, 0.1, 0.1, 0.9); // lapis
-  quarto.putBox(78, 82, 34, 34, 81, 81);
+  quarto.putBox(79, 83, 34, 34, 81, 81);
   quarto.setColor(0.1, 0.1, 0.1, 0.9); // notebook
   quarto.putBox(78, 88, 33, 33, 52, 69);
   quarto.putBox(88, 88, 33, 43, 52, 69);
@@ -98,6 +98,38 @@ int main(void){
   quarto.putBox(60, 60, 1, 1, 2, 99);
   quarto.putBox(40, 40, 1, 1, 2, 99);
   quarto.putBox(20, 20, 1, 1, 2, 99);
+  quarto.setColor(0.55, 0.35, 0.1, 0.9); // gavetas
+  quarto.putBox(2, 20, 2, 37, 60, 96);
+  quarto.cutBox(20, 20, 2, 37, 95, 95);
+  quarto.cutBox(20, 20, 2, 37, 61, 61);
+  quarto.cutBox(20, 20, 27, 27, 62, 94);
+  quarto.cutBox(20, 20, 17, 17, 62, 94);
+  quarto.cutBox(20, 20, 7, 7, 62, 94);
+  quarto.cutBox(10, 20, 3, 7, 63, 93); // gaveta aberta
+  quarto.putBox(20, 29, 2, 2, 62, 94); 
+  quarto.putBox(30, 30, 2, 7, 62, 94);
+  quarto.putBox(10, 29, 2, 6, 62, 62);
+  quarto.putBox(10, 29, 2, 6, 94, 94);
+  quarto.setColor(0.4, 0.2, 0.1, 0.9);
+  quarto.putBox(19, 19, 2, 37, 95, 95);
+  quarto.putBox(19, 19, 2, 37, 61, 61);
+  quarto.putBox(19, 19, 27, 27, 62, 94);
+  quarto.putBox(19, 19, 17, 17, 62, 94);
+  quarto.putBox(19, 19, 36, 36, 62, 94);
+  quarto.putBox(19, 19, 7, 7, 62, 94);
+  quarto.setColor(0.1, 0.1, 0.1, 0.9); 
+  quarto.putBox(21, 21, 32, 32, 77, 79);
+  quarto.putBox(21, 21, 22, 22, 77, 79);
+  quarto.putBox(21, 21, 12, 12, 77, 79);
+  quarto.putBox(31, 31, 4, 4, 77, 79);
+  quarto.cutBox(19, 19, 37, 37, 61, 95);
+  quarto.cutBox(20, 20, 3, 7, 63, 93);
+  quarto.setColor(0.85, 0.1, 0.23, 0.9); // roupas
+  quarto.putBox(14, 28, 4, 4, 63, 75);
+  quarto.setColor(0.9, 0.53, 0.01, 0.9);
+  quarto.putBox(14, 28, 6, 6, 63, 75);
+  quarto.setColor(0.1, 0.45, 0.55, 0.9);
+  quarto.putBox(14, 28, 5, 5, 63, 75);
 
   quarto.writeOFF("../quarto.off"); // salvar no diretório acima
 }
