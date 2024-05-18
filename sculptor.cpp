@@ -190,6 +190,9 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
  * @param xcenter Endereço do centro do elipsóide no eixo x
  * @param ycenter Endereço do centro do elipsóide no eixo y
  * @param zcenter Endereço do centro do elipsóide no eixo z
+ * @param rx Raio no eixo x
+ * @param ry Raio no eixo y
+ * @param rz Raio no eixo z
 */
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
   int i, j, k, x0, x1, y0, y1, z0, z1;
@@ -220,6 +223,15 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
   }
 }
 
+/**
+ * @brief Remove um elipsóide
+ * @param xcenter Endereço do centro do elipsóide no eixo x
+ * @param ycenter Endereço do centro do elipsóide no eixo y
+ * @param zcenter Endereço do centro do elipsóide no eixo z
+ * @param rx Raio no eixo x
+ * @param ry Raio no eixo y
+ * @param rz Raio no eixo z
+*/
 void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
   int i, j, k, x0, x1, y0, y1, z0, z1;
   double dx, dy, dz;
@@ -245,6 +257,10 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
   }
 }
 
+/**
+ * @brief Salva a matriz em formato .off
+ * @param filename Nome do arquivo, exemplo: "quarto.off"
+*/
 void Sculptor::writeOFF(const char *filename){
   int nVoxel = 0, f = 0, i, j, k;
   std::ofstream fout;
