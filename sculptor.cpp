@@ -100,7 +100,7 @@ void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
 }
 
 /**
- * @brief Remove um cubo da escultura
+ * @brief Remove um cubo
  * @param x0 Endereço inicial em x
  * @param x0 Endereço inicial em x
  * @param y0 Endereço inicial em y
@@ -120,8 +120,11 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
 }
 
 /**
- * @brief Adiciona uma esfera à escultura
- * @param xcenter
+ * @brief Adiciona uma esfera
+ * @param xcenter Endereço do centro da esfera no eixo x
+ * @param ycenter Endereço do centro da esfera no eixo y
+ * @param zcenter Endereço do centro da esfera no eixo z
+ * @param radius Raio da esfera
 */
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
@@ -151,6 +154,13 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   }
 }
 
+/**
+ * @brief Remove uma esfera
+ * @param xcenter Endereço do centro da esfera no eixo x
+ * @param ycenter Endereço do centro da esfera no eixo y
+ * @param zcenter Endereço do centro da esfera no eixo z
+ * @param radius Raio da esfera
+*/
 void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
    // (x - a)² + (y - b)² + (z - c)² = r²
@@ -175,6 +185,12 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
   }
 }
 
+/**
+ * @brief Adiciona um elipsóide
+ * @param xcenter Endereço do centro do elipsóide no eixo x
+ * @param ycenter Endereço do centro do elipsóide no eixo y
+ * @param zcenter Endereço do centro do elipsóide no eixo z
+*/
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
   int i, j, k, x0, x1, y0, y1, z0, z1;
   double dx, dy, dz;
