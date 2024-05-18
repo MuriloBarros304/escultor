@@ -75,6 +75,15 @@ void Sculptor::cutVoxel(int x, int y, int z){
   v[x][y][z].show = false;
 }
 
+/**
+ * @brief Adiciona um cubo à escultura
+ * @param x0 Endereço inicial em x
+ * @param x0 Endereço inicial em x
+ * @param y0 Endereço inicial em y
+ * @param y1 Endereço final em y
+ * @param z1 Endereço inical em z
+ * @param z1 Endereço final em z
+*/
 void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
   int i, j, k;
   for(i=x0;i<=x1;i++){
