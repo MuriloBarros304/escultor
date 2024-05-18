@@ -259,7 +259,8 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 
 /**
  * @brief Salva a matriz em formato .off
- * @param filename Nome do arquivo, exemplo: "quarto.off"
+ * @param filename Nome do arquivo, exemplo: "quarto.off" para salvar no diretório do projeto, ou adicionar caminho absoluto
+ * 
 */
 void Sculptor::writeOFF(const char *filename){
   int nVoxel = 0, f = 0, i, j, k;
