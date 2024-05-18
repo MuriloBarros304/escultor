@@ -99,6 +99,15 @@ void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1){
   }
 }
 
+/**
+ * @brief Remove um cubo da escultura
+ * @param x0 Endereço inicial em x
+ * @param x0 Endereço inicial em x
+ * @param y0 Endereço inicial em y
+ * @param y1 Endereço final em y
+ * @param z1 Endereço inical em z
+ * @param z1 Endereço final em z
+*/
 void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
   int i, j, k;
   for(i=x0;i<=x1;i++){
@@ -110,6 +119,10 @@ void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1){
   }
 }
 
+/**
+ * @brief Adiciona uma esfera à escultura
+ * @param xcenter
+*/
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
    // (x - a)² + (y - b)² + (z - c)² = r²
