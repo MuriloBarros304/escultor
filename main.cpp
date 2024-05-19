@@ -2,9 +2,10 @@
 
 /**
  * \mainpage 
- * @brief Escultor 3D utilizando blocos com C++, projeto requerido na segunda unidade da disciplina: Programação Avançada no Departamento de Engenharia de Computação e Automação da Universidade Federal do Rio Grande do Norte
+ * @brief Escultor 3D utilizando blocos com C++, projeto requerido na segunda unidade da disciplina:
+ * Programação Avançada no Departamento de Engenharia de Computação e Automação da Universidade Federal do Rio Grande do Norte.
 */
-int main(void){
+int main(void){ // Modelagem de um quarto
   Sculptor quarto(100, 100, 100);
   quarto.setColor(0.9, 0.9, 0.9, 0.9); // paredes
   quarto.putBox(0, 99, 0, 99, 0, 99);
