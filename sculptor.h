@@ -4,9 +4,9 @@
 
 class Sculptor {
 private:
-  Voxel ***v; // 3D matrix
-  int nx,ny,nz; // Dimensions
-  float r,g,b,a; // Current drawing color
+  Voxel ***v; // Matriz 3D 
+  int nx,ny,nz; // Dimensões
+  float r,g,b,a; // Cor atual de desenho
 public:
   Sculptor(int _nx, int _ny, int _nz); // Construtor com argumentos
   ~Sculptor(); // Destrutor
