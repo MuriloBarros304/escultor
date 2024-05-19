@@ -1,4 +1,7 @@
-# Projeto Escultor 3D em C++
+# Sobre o projeto
+## Discentes:
+- Murilo de Lima Barros
+- Leonardo Pessoa Cavalcanti
 ## Links úteis
 - Página do professor: https://agostinhobritojr.github.io/curso/progav-dca1202/escultor.html
 - Repositório no Github: https://github.com/MuriloBarros304/escultor
