@@ -275,6 +275,18 @@ void Sculptor::writeOFF(const char *filename){
       }
     }
   }
+
+  for(i=1;i<nx;i++){
+    for(j=0;j<ny;j++){
+      for(k=0;k<nz;k++){
+        if(v[i][j][k].show == true and v[i][i+1][i].show == true and v[i][j][k-1].show == true and v[i-1][j][k].show == true
+        and v[i][j][k+1].show == true){
+          nVoxel++;
+        }
+      }
+    }
+  }
+
   // abrir arquivo
   fout.open(filename);
   if (!fout.is_open()) {

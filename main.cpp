@@ -10,7 +10,7 @@
 */
 int main(void){ // Modelagem de um quarto
   Sculptor quarto(100, 100, 100);
-  quarto.setColor(0.9, 0.9, 0.9, 1); // paredes
+  quarto.setColor(1.0, 1.0, 1.0, 1); // paredes
   quarto.putBox(0, 99, 0, 99, 0, 99);
   quarto.cutBox(2, 97, 1, 99, 2, 99);
   quarto.setColor(0.99, 0.99, 0.10, 1);
@@ -22,7 +22,7 @@ int main(void){ // Modelagem de um quarto
   quarto.cutBox(3, 13, 27, 41, 33, 47);
   quarto.setColor(0.39, 0.18, 0.01, 1); // janela
   quarto.putBox(34, 68, 34, 68, 0, 3);
-  quarto.setColor(0.4, 0.4, 0.9, 0.75); // transparencia na janela de vidro
+  quarto.setColor(0.4, 0.4, 0.9, 0.3); // transparencia na janela de vidro
   quarto.cutBox(36, 50, 36, 50, 0, 3);
   quarto.cutBox(36, 50, 52, 66, 0, 3);
   quarto.cutBox(52, 66, 52, 66, 0, 3);
