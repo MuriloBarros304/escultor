@@ -265,22 +265,23 @@ void Sculptor::writeOFF(const char *filename){
   int nVoxel = 0, f = 0, i, j, k;
   std::ofstream fout;
 
-  // contagem de voxels
-  for(i=0;i<nx;i++){
-    for(j=0;j<ny;j++){
-      for(k=0;k<nz;k++){
-        if(v[i][j][k].show == true){
-          nVoxel++;
+  // para que diminuição do custo computacional, todos os voxels que estão cobertos por outros voxels não devem ter show = true
+  for(i=1;i<nx-1;i++){
+    for(j=1;j<ny-1;j++){
+      for(k=1;k<nz-1;k++){
+        if(v[i][j][k].show and v[i][j+1][k].show and v[i][j][k-1].show and v[i-1][j][k].show and v[i][j][k+1].show 
+        and v[i][j-1][k].show and v[i+1][j][k].show){
+          v[i][j][k].show = false;
         }
       }
     }
   }
 
-  for(i=1;i<nx;i++){
+  // contagem de voxels
+  for(i=0;i<nx;i++){
     for(j=0;j<ny;j++){
       for(k=0;k<nz;k++){
-        if(v[i][j][k].show == true and v[i][i+1][i].show == true and v[i][j][k-1].show == true and v[i-1][j][k].show == true
-        and v[i][j][k+1].show == true){
+        if(v[i][j][k].show == true){
           nVoxel++;
         }
       }
