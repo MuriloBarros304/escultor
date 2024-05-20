@@ -265,7 +265,7 @@ void Sculptor::writeOFF(const char *filename){
   int nVoxel = 0, f = 0, i, j, k;
   std::ofstream fout;
 
-  // para que diminuição do custo computacional, todos os voxels que estão cobertos por outros voxels não devem ter show = true
+  // para diminuição do custo computacional, todos os voxels que estão cobertos por outros voxels não devem ter show = true
   for(i=1;i<nx-1;i++){
     for(j=1;j<ny-1;j++){
       for(k=1;k<nz-1;k++){
