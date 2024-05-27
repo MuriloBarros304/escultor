@@ -8,5 +8,26 @@ PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
 }
 
 void putSphere::draw(Sculptor &t) {
-
+    int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
+    // (x - a)² + (y - b)² + (z - c)² = r²
+    // limites da esfera
+    x0 = xcenter - t.radius;
+    x1 = xcenter + radius;
+    y0 = ycenter - radius;
+    y1 = ycenter + radius;
+    z0 = zcenter - radius;
+    z1 = zcenter + radius;
+    for (i = (x0); i <= (x1); i++) {
+        dx = (i - xcenter) * (i - xcenter);
+        for (j = (y0); j <= (y1); j++) {
+            dy = (j - ycenter) * (j - ycenter);
+            for (k = (z0); k <= (z1); k++) {
+                dz = (k - zcenter) * (k - zcenter);
+                if (dx + dy + dz <= (radius * radius)) {
+                    t.setColor(r, g, b, a);
+                    t.putVoxel(i, j, k);
+                }
+            }
+        }
+    }
 }
