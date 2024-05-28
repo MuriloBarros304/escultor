@@ -5,13 +5,17 @@ PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
     this->y = ycenter;
     this->z = zcenter;
     this->radius = radius;
+    this->r = r;
+    this->g = g;
+    this->b = b;
+    this->a = a;
 }
 
 void putSphere::draw(Sculptor &t) {
     int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
     // (x - a)² + (y - b)² + (z - c)² = r²
     // limites da esfera
-    x0 = xcenter - t.radius;
+    x0 = xcenter - radius;
     x1 = xcenter + radius;
     y0 = ycenter - radius;
     y1 = ycenter + radius;
