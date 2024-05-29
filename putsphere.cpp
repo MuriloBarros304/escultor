@@ -1,9 +1,9 @@
 #include "putsphere.h"
 
 PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r, float g, float b, float a) {
-    this->x = xcenter;
-    this->y = ycenter;
-    this->z = zcenter;
+    this->x0 = xcenter;
+    this->y0 = ycenter;
+    this->z0 = zcenter;
     this->radius = radius;
     this->r = r;
     this->g = g;
@@ -12,7 +12,7 @@ PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
 }
 
 void PutSphere::draw(Sculptor &t) {
-    int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz;
+    int i, j, k, x0, x1, y0, y1, z0, z1, dx, dy, dz, r2;
     // (x - a)² + (y - b)² + (z - c)² = r²
     // limites da esfera
     r2 = radius * radius;

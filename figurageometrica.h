@@ -4,6 +4,7 @@
 
 class FiguraGeometrica {
    protected:
+    int x0, y0, z0;
     float r, g, b, a;
 
    public:
