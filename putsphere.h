@@ -1,6 +1,7 @@
 #ifndef PUTSPHERE_H
 #define PUTSPHERE_H
 #include "figurageometrica.h"
+#include "sculptor.h"
 
 class PutSphere : public FiguraGeometrica {
    private:

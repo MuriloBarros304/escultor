@@ -3,8 +3,7 @@
 #include "sculptor.h"
 
 class FiguraGeometrica {
-   private:
-    int x, y, z;
+   protected:
     float r, g, b, a;
 
    public:
