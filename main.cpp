@@ -139,5 +139,5 @@ int main(void) {  // Modelagem de um quarto
     quarto.setColor(0.1, 0.45, 0.55, 1);
     quarto.putBox(14, 28, 5, 5, 63, 75);
 
-    quarto.writeOFF("../quarto.off");  // salvar no diretório acima
+    quarto.writeOFF("../teste.off");  // salvar no diretório acima
 }
