@@ -1,7 +1,6 @@
-#include "putsphere.h"
+#include "cutsphere.h"
 
-PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
-                     float g, float b, float a) {
+CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius, float r, float g, float b, float a) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
@@ -12,7 +11,7 @@ PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
     this->a = a;
 }
 
-void PutSphere::draw(Sculptor &t) {
+void CutSphere::draw(Sculptor &t) {
     int i, j, k, xi, xf, yi, yf, zi, zf, dx, dy, dz, r2;
     // (x - a)² + (y - b)² + (z - c)² = r²
     // limites da esfera
@@ -31,7 +30,7 @@ void PutSphere::draw(Sculptor &t) {
                 dz = (k - zcenter) * (k - zcenter);
                 if (dx + dy + dz <= r2) {
                     t.setColor(r, g, b, a);
-                    t.putVoxel(i, j, k);
+                    t.cutVoxel(i, j, k);
                 }
             }
         }
