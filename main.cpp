@@ -11,7 +11,7 @@
  */
 int main(void) {  // Modelagem de um quarto
     Sculptor quarto(100, 100, 100);
-    quarto.setColor(1.0, 1.0, 1.0, 1);  // paredes
+    /* quarto.setColor(1.0, 1.0, 1.0, 1);  // paredes
     quarto.putBox(0, 99, 0, 99, 0, 99);
     quarto.cutBox(2, 97, 1, 99, 2, 99);
     quarto.setColor(0.99, 0.99, 0.10, 1);
@@ -137,7 +137,7 @@ int main(void) {  // Modelagem de um quarto
     quarto.setColor(0.9, 0.53, 0.01, 1);
     quarto.putBox(14, 28, 6, 6, 63, 75);
     quarto.setColor(0.1, 0.45, 0.55, 1);
-    quarto.putBox(14, 28, 5, 5, 63, 75);
+    quarto.putBox(14, 28, 5, 5, 63, 75); */
 
-    quarto.writeOFF("../quarto.off");  // salvar no diretório acima
+    quarto.writeOFF("../teste.off");  // salvar no diretório acima
 }
