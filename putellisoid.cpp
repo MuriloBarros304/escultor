@@ -1,5 +1,16 @@
 #include "putellipsoid.h"
 
+/// @brief Método para desenhar uma elipsóide
+/// @param xcenter Centro em no eixo x
+/// @param ycenter Centro no eixo y
+/// @param zcenter Centro no eixo z
+/// @param rx Raio em x
+/// @param ry Raio em y
+/// @param rz Raio em z
+/// @param r Valor da cor vermelha
+/// @param g Valor da cor verde
+/// @param b Valor da cor azul
+/// @param a Transparência
 PutEllipsoid::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz, float r,
                      float g, float b, float a) {
     this->x0 = xcenter;

@@ -7,22 +7,13 @@
 /// @param rx Raio em x
 /// @param ry Raio em y
 /// @param rz Raio em z
-/// @param r Valor da cor vermelha
-/// @param g Valor da cor verde
-/// @param b Valor da cor azul
-/// @param a Transparência
-CutEllipsoid::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz, float r,
-                     float g, float b, float a) {
+CutEllipsoid::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
     this->rx = rx;
     this->ry = ry;
     this->rz = rz;
-    this->r = r;
-    this->g = g;
-    this->b = b;
-    this->a = a;
 }
 
 /// @brief Método da classe abstrata pura FiguraGeometrica

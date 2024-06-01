@@ -7,12 +7,7 @@
 /// @param y1 Posição final da caixa no eixo y
 /// @param z0 Posição inicial da caixa no eixo z
 /// @param z1 Posição final da caixa no eixo z
-/// @param r Valor da cor vermelha
-/// @param g Valor da cor verde
-/// @param b Valor da cor azul
-/// @param a Transparência
-CutBox::cutBox(int x0, int x1, int y0, int y1, int z0, int z1, float r, float g,
-               float b, float a) {
+CutBox::cutBox(int x0, int x1, int y0, int y1, int z0, int z1) {
     this->x0 = x0;
     this->x1 = x1;
     this->y0 = y0;

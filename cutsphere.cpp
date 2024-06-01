@@ -1,14 +1,19 @@
 #include "cutsphere.h"
 
-CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius, float r, float g, float b, float a) {
+/// @brief Método para esconder uma esfera
+/// @param xcenter Centro no eixo x
+/// @param ycenter Centro no eixo y
+/// @param zcenter Centro no eixo z
+/// @param radius Raio 
+/// @param r Valor da cor vermelha
+/// @param g Valor da cor verde
+/// @param b Valor da cor azul
+/// @param a Transparência
+CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
     this->radius = radius;
-    this->r = r;
-    this->g = g;
-    this->b = b;
-    this->a = a;
 }
 
 /// @brief Método da classe abstrata pura FiguraGeometrica
@@ -31,7 +36,6 @@ void CutSphere::draw(Sculptor &t) {
             for (k = zi; k <= zf; k++) {
                 dz = (k - zcenter) * (k - zcenter);
                 if (dx + dy + dz <= r2) {
-                    t.setColor(r, g, b, a);
                     t.cutVoxel(i, j, k);
                 }
             }
