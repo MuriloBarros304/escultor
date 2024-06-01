@@ -4,7 +4,7 @@
 /// @param xcenter Centro no eixo x
 /// @param ycenter Centro no eixo y
 /// @param zcenter Centro no eixo z
-/// @param radius Raio 
+/// @param radius Raio
 CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius) {
     this->x0 = xcenter;
     this->y0 = ycenter;
