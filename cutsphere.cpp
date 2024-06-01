@@ -11,6 +11,8 @@ CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
     this->a = a;
 }
 
+/// @brief Método da classe abstrata pura FiguraGeometrica
+/// @param t Objeto da classe Sculptor
 void CutSphere::draw(Sculptor &t) {
     int i, j, k, xi, xf, yi, yf, zi, zf, dx, dy, dz, r2;
     // (x - a)² + (y - b)² + (z - c)² = r²

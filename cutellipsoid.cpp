@@ -14,6 +14,8 @@ CutEllipsoid::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry
     this->a = a;
 }
 
+/// @brief Método da classe abstrata pura FiguraGeometrica
+/// @param t Objeto da classe Sculptor
 void CutEllipsoid::draw(Sculptor &t) {
     int i, j, k, xi, xf, yi, yf, zi, zf, rx2, ry2, rz2, dx, dy, dz;
     // (x - xc)² / rx² + (y - yc)² / ry² + (z - zc)² / rz² = 1

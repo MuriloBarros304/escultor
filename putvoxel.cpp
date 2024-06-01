@@ -10,6 +10,8 @@ PutVoxel::putVoxel (int x, int y, int z, float r, float g, float b, float a) {
     this->a = a; 
 }
 
+/// @brief Método da classe abstrata pura FiguraGeometrica
+/// @param t Objeto da classe Sculptor
 PutVoxel::draw (Sculptor &t) {
     t.setColor(r, g, b, a);
     t.putVoxel(x0, y0, z0);
