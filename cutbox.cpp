@@ -1,5 +1,16 @@
 #include "cutbox.h"
 
+/// @brief Método para esconder uma caixa
+/// @param x0 Posição inicial da caixa no eixo x
+/// @param x1 Posição final da caixa no eixo x
+/// @param y0 Posição inicial da caixa no eixo y
+/// @param y1 Posição final da caixa no eixo y
+/// @param z0 Posição inicial da caixa no eixo z
+/// @param z1 Posição final da caixa no eixo z
+/// @param r Valor da cor vermelha
+/// @param g Valor da cor verde
+/// @param b Valor da cor azul
+/// @param a Transparência
 CutBox::cutBox(int x0, int x1, int y0, int y1, int z0, int z1, float r, float g,
                float b, float a) {
     this->x0 = x0;
