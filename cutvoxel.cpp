@@ -1,5 +1,9 @@
 #include "cutvoxel.h"
 
+/// @brief Método para desenhar um voxel
+/// @param x Posição no eixo x
+/// @param y Posição no eixo y
+/// @param z Posição no eixo z
 CutVoxel::cutVoxel (int x, int y, int z, float r, float g, float b, float a) {
     this->x0 = x;
     this->y0 = y;

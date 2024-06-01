@@ -5,10 +5,6 @@
 /// @param ycenter Centro no eixo y
 /// @param zcenter Centro no eixo z
 /// @param radius Raio 
-/// @param r Valor da cor vermelha
-/// @param g Valor da cor verde
-/// @param b Valor da cor azul
-/// @param a Transparência
 CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius) {
     this->x0 = xcenter;
     this->y0 = ycenter;
