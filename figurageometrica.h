@@ -5,7 +5,7 @@
 /// @brief Classe abstrata pura que passa por herança o método draw() e os
 /// atributos de uma figura genérica
 /// @protected Posição e cor
-/// @public Construtor, destrutor e método abstrato puro draw()
+/// @public Construtor, destrutor e método herdado da classe abstrata FiguraGeometrica
 class FiguraGeometrica {
    protected:
     int x0, y0, z0;

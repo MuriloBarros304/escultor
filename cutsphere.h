@@ -4,7 +4,7 @@
 
 /// @brief Classe para esconder uma esfera
 /// @protected Raio da esfera
-/// @public Método para esconder uma esfera
+/// @public Método para esconder uma esfera e método herdado da classe abstrata FiguraGeometrica
 class CutSphere : public FiguraGeometrica {
    protected:
     int radius;

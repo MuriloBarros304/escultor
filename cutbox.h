@@ -4,7 +4,7 @@
 
 /// @brief Classe para esconder uma caixa, herda de FiguraGeometrica
 /// @protected Atributos exclusivos da classe: posição final da caixa
-/// @public Método para cortar caixa e método abstrato
+/// @public Método para cortar caixa e método herdado da classe abstrata FiguraGeometrica
 class CutBox : public FiguraGeometrica {
    protected:
     int x1, y1, z1;

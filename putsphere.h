@@ -2,6 +2,7 @@
 #define PUTSPHERE_H
 #include "figurageometrica.h"
 
+/// @brief Classe para desenhar uma esfera
 class PutSphere : public FiguraGeometrica {
    private:
     int radius;
