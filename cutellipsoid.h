@@ -2,7 +2,7 @@
 #define CUTELLIPSOID_H
 #include "figurageometrica.h"
 
-/// @brief Classe para esconder uma elipsóide
+/// @brief Classe para esconder uma elipsóide, herda características de FiguraGeometrica
 /// @protected Raios da elipsóide
 /// @public Método para esconder uma elipsóide e método abstrato herdado de FiguraGeometrica
 class CutEllipsoid : public FiguraGeometrica {

@@ -2,7 +2,7 @@
 #define CUTVOXEL_H
 #include "figurageometrica.h"
 
-/// @brief Classe para esconder um voxel
+/// @brief Classe para esconder um voxel, herda características de FiguraGeometrica
 /// @public Método para esconder um voxel e método herdado da classe abstrata FiguraGeometrica
 class CutVoxel : public FiguraGeometrica {
     public: 

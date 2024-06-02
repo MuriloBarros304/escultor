@@ -2,7 +2,7 @@
 #define PUTBOX_H
 #include "figurageometrica.h"
 
-/// @brief Classe para desenhar uma caixa
+/// @brief Classe para desenhar uma caixa, herda características de FiguraGeometrica
 /// @protected Posições finais da caixa
 /// @public Método para desenhar uma caixa e método abstrato herdado de FiguraGeometrica
 class PutBox : public FiguraGeometrica {

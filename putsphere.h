@@ -2,7 +2,9 @@
 #define PUTSPHERE_H
 #include "figurageometrica.h"
 
-/// @brief Classe para desenhar uma esfera
+/// @brief Classe para desenhar uma esfera, herda características de FiguraGeometrica
+/// @protected Raio da esfera
+/// @public Método para desenhar uma esfera e método herdado da classe abstrata FiguraGeometrica
 class PutSphere : public FiguraGeometrica {
    private:
     int radius;

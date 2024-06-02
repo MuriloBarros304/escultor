@@ -2,7 +2,7 @@
 #define PUTELLIPSOID_H
 #include "figurageometrica.h"
 
-/// @brief Classe para desenhar uma elipsóide
+/// @brief Classe para desenhar uma elipsóide, herda características de FiguraGeometrica
 /// @protected Raios da elipsóide
 /// @public Método para desenhar elipsoide e método herdado da classe abstrata FiguraGeometrica
 class PutEllipsoid : public FiguraGeometrica {

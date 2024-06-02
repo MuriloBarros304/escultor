@@ -2,7 +2,7 @@
 #define CUTSPHERE_H
 #include "figurageometrica.h"
 
-/// @brief Classe para esconder uma esfera
+/// @brief Classe para esconder uma esfera, herda características de FiguraGeometrica
 /// @protected Raio da esfera
 /// @public Método para esconder uma esfera e método herdado da classe abstrata FiguraGeometrica
 class CutSphere : public FiguraGeometrica {

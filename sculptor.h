@@ -2,6 +2,8 @@
 #define SCULPTOR_H
 #include "voxel.h"
 
+/// @brief Classe dos objetos que serão desenhados
+/// @public Métodos para desenhar, esconder, alocar e escrever
 class Sculptor {
    public:
     Voxel*** v;                           // Matriz 3D
