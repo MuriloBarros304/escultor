@@ -8,7 +8,7 @@
 /// @param g Valor da cor verde
 /// @param b Valor da cor azul
 /// @param a Transparência
-PutVoxel::putVoxel (int x, int y, int z, float r, float g, float b, float a) {
+PutVoxel::PutVoxel (int x, int y, int z, float r, float g, float b, float a) {
     this->x0 = x;
     this->y0 = y;
     this->z0 = z;
@@ -20,7 +20,7 @@ PutVoxel::putVoxel (int x, int y, int z, float r, float g, float b, float a) {
 
 /// @brief Método da classe abstrata pura FiguraGeometrica
 /// @param t Objeto da classe Sculptor
-PutVoxel::draw (Sculptor &t) {
+void PutVoxel::draw (Sculptor &t) {
     t.setColor(r, g, b, a);
     t.putVoxel(x0, y0, z0);
 }

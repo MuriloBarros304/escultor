@@ -6,6 +6,6 @@
 /// @public Método para esconder um voxel e método herdado da classe abstrata FiguraGeometrica
 class CutVoxel : public FiguraGeometrica {
     public: 
-    void cutVoxel (int x, int y, int z, float r, float g, float b, float a);
+    CutVoxel (int x, int y, int z);
     virtual void draw (Sculptor &t);
 };
