@@ -5,7 +5,7 @@
 /// @param ycenter Centro no eixo y
 /// @param zcenter Centro no eixo z
 /// @param radius Raio
-CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius) {
+void CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
@@ -26,11 +26,11 @@ void CutSphere::draw(Sculptor &t) {
     zi = z0 - radius;
     zf = z0 + radius;
     for (i = xi; i <= xf; i++) {
-        dx = i - xcenter * (i - xcenter);
+        dx = i - x0 * (i - x0);
         for (j = yi; j <= yf; j++) {
-            dy = (j - ycenter) * (j - ycenter);
+            dy = (j - y0) * (j - y0);
             for (k = zi; k <= zf; k++) {
-                dz = (k - zcenter) * (k - zcenter);
+                dz = (k - z0) * (k - z0);
                 if (dx + dy + dz <= r2) {
                     t.cutVoxel(i, j, k);
                 }

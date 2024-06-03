@@ -12,7 +12,7 @@ class CutEllipsoid : public FiguraGeometrica {
     int rz;
 
    public:
-    cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz);
+    void cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz);
     virtual void draw(Sculptor &t);
-}
+};
 #endif  // CUTELLIPSOID_H

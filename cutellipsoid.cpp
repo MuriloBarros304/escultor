@@ -7,7 +7,7 @@
 /// @param rx Raio em x
 /// @param ry Raio em y
 /// @param rz Raio em z
-CutEllipsoid::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
+void CutEllipsoid::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
@@ -32,11 +32,11 @@ void CutEllipsoid::draw(Sculptor &t) {
     zi = z0 - rz;
     zf = z0 + rz;
     for (i = xi; i <= xf; i++) {
-        dx = (i - xcenter) * (i - xcenter);
+        dx = (i - x0) * (i - x0);
         for (j = yi; j <= yf; j++) {
-            dy = (j - ycenter) * (j - ycenter);
+            dy = (j - y0) * (j - y0);
             for (k = zi; k <= zf; k++) {
-                dz = (k - zcenter) * (k - zcenter);
+                dz = (k - z0) * (k - z0);
                 if ((dx / rx2 + dy / ry2 + dz / rz2) <= 1) {
                     t.cutVoxel(i, j, k);
                 }

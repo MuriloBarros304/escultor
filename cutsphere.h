@@ -9,7 +9,7 @@ class CutSphere : public FiguraGeometrica {
    protected:
     int radius;
    public:
-    cutSphere(int xcenter, int ycenter, int zcenter, int radius);
+    void cutSphere(int xcenter, int ycenter, int zcenter, int radius);
     virtual void draw(Sculptor &t);
-}
+};
 #endif // CUTSPHERE_H

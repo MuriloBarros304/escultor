@@ -7,7 +7,7 @@
 /// @param y1 Posição final da caixa no eixo y
 /// @param z0 Posição inicial da caixa no eixo z
 /// @param z1 Posição final da caixa no eixo z
-CutBox::cutBox(int x0, int x1, int y0, int y1, int z0, int z1) {
+void CutBox::cutBox(int x0, int x1, int y0, int y1, int z0, int z1) {
     this->x0 = x0;
     this->x1 = x1;
     this->y0 = y0;
@@ -18,7 +18,7 @@ CutBox::cutBox(int x0, int x1, int y0, int y1, int z0, int z1) {
 
 /// @brief Método da classe abstrata pura FiguraGeometrica
 /// @param t Objeto da classe Sculptor
-CutBox::draw(Sculptor &t) {
+void CutBox::draw(Sculptor &t) {
     int i, j, k;
     for (i = x0; i <= x1; i++) {
         for (j = y0; j <= y1; j++) {

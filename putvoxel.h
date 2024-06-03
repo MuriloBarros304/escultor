@@ -10,4 +10,4 @@ class PutVoxel : public FiguraGeometrica {
    public:
     putVoxel(int x, int y, int z, float r, float g, float b, float a);
     virtual void draw(Sculptor &t);
-}
+};

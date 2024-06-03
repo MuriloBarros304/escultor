@@ -11,5 +11,5 @@ class PutSphere : public FiguraGeometrica {
    public:
     void putSphere(int xcenter, int ycenter, int zcenter, int radius, float r, float g, float b, float a);
     virtual void draw(Sculptor &t);
-}
+};
 #endif // PUTSPHERE_H

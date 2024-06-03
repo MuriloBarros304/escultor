@@ -9,7 +9,7 @@
 /// @param g Valor da cor verde
 /// @param b Valor da cor azul
 /// @param a Transparência
-PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
+void PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
                      float g, float b, float a) {
     this->x0 = xcenter;
     this->y0 = ycenter;
@@ -35,11 +35,11 @@ void PutSphere::draw(Sculptor &t) {
     zi = z0 - radius;
     zf = z0 + radius;
     for (i = xi; i <= xf; i++) {
-        dx = i - xcenter * (i - xcenter);
+        dx = i - x0 * (i - x0);
         for (j = yi; j <= yf; j++) {
-            dy = (j - ycenter) * (j - ycenter);
+            dy = (j - y0) * (j - y0);
             for (k = zi; k <= zf; k++) {
-                dz = (k - zcenter) * (k - zcenter);
+                dz = (k - z0) * (k - z0);
                 if (dx + dy + dz <= r2) {
                     t.setColor(r, g, b, a);
                     t.putVoxel(i, j, k);

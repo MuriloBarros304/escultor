@@ -13,5 +13,5 @@ class PutEllipsoid : public FiguraGeometrica {
    public:
     void putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz, float r, float g, float b, float a);
     virtual void draw(Sculptor &t);
-}
+};
 #endif // PUTELLIPSOID_H

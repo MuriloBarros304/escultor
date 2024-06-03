@@ -15,8 +15,13 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz) {  // Construtor com argumentos
     ny = _ny;
     nz = _nz;
     int i, j;
-    if (nx <= 0 or ny <= 0 or nz <= 0) {
-        throw std::runtime_error("Erro nas dimensões da matriz\n");
+    try {
+        if (nx <= 0 or ny <= 0 or nz <= 0) {
+            throw e;
+        }
+    }
+    catch (const char* e) {
+        std::cout << "Erro nas dimensões da matriz: " << e << "\n";
     }
     // alocação dinâmica de memória
     v = new Voxel **[nx];
