@@ -2,7 +2,7 @@
 
 /// @brief Construtor
 FiguraGeometrica::FiguraGeometrica () {
-
+    
 }
 
 /// @brief Destrutor
