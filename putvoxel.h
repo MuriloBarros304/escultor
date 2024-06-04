@@ -12,3 +12,4 @@ class PutVoxel : public FiguraGeometrica {
     ~PutVoxel();
     virtual void draw(Sculptor &t);
 };
+#endif  // CUTVOXEL_H

@@ -12,3 +12,4 @@ class CutVoxel : public FiguraGeometrica {
     ~CutVoxel();
     virtual void draw(Sculptor &t);
 };
+#endif  // CUTVOXEL_H
