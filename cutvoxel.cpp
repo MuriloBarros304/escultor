@@ -1,6 +1,6 @@
 #include "cutvoxel.h"
 
-/// @brief Método para desenhar um voxel
+/// @brief Construtor da classe para desenhar um voxel
 /// @param x Posição no eixo x
 /// @param y Posição no eixo y
 /// @param z Posição no eixo z
@@ -12,6 +12,10 @@ CutVoxel::CutVoxel (int x, int y, int z) {
     this->g = g;
     this->b = b;
     this->a = a; 
+}
+
+CutVoxel::~CutVoxel () {
+
 }
 
 /// @brief Método da classe abstrata pura FiguraGeometrica

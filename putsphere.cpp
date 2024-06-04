@@ -1,15 +1,15 @@
 #include "putsphere.h"
 
-/// @brief Método para criar uma esfera
+/// @brief Construtor da classe para criar uma esfera
 /// @param xcenter Centro no eixo x
 /// @param ycenter Centro no eixo y
 /// @param zcenter Centro no eixo z
-/// @param radius Raio 
+/// @param radius Raio
 /// @param r Valor da cor vermelha
 /// @param g Valor da cor verde
 /// @param b Valor da cor azul
 /// @param a Transparência
-void PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
+PutSphere::PutSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
                      float g, float b, float a) {
     this->x0 = xcenter;
     this->y0 = ycenter;
@@ -20,6 +20,8 @@ void PutSphere::putSphere(int xcenter, int ycenter, int zcenter, int radius, flo
     this->b = b;
     this->a = a;
 }
+
+PutSphere::~PutSphere() {}
 
 /// @brief Método da classe abstrata pura FiguraGeometrica
 /// @param t Objeto da classe Sculptor

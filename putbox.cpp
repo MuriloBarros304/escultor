@@ -1,6 +1,6 @@
 #include "putbox.h"
 
-/// @brief Método para desenhar uma caixa
+/// @brief Construtor da classe para desenhar uma caixa
 /// @param x0 Posição inicial da caixa no eixo x
 /// @param x1 Posição final da caixa no eixo x
 /// @param y0 Posição inicial da caixa no eixo y
@@ -11,7 +11,7 @@
 /// @param g Valor da cor verde
 /// @param b Valor da cor azul
 /// @param a Transparência
-void PutBox::putBox(int x0, int x1, int y0, int y1, int z0, int z1, float r, float g,
+PutBox::PutBox(int x0, int x1, int y0, int y1, int z0, int z1, float r, float g,
                float b, float a) {
     this->x0 = x0;
     this->x1 = x1;
@@ -23,6 +23,10 @@ void PutBox::putBox(int x0, int x1, int y0, int y1, int z0, int z1, float r, flo
     this->g = g;
     this->b = b;
     this->a = a;
+}
+
+PutBox::~PutBox () {
+
 }
 
 /// @brief Método da classe abstrata pura FiguraGeometrica

@@ -1,6 +1,6 @@
 #include "putellipsoid.h"
 
-/// @brief Método para desenhar uma elipsóide
+/// @brief Construtor da classe para desenhar uma elipsóide
 /// @param xcenter Centro em no eixo x
 /// @param ycenter Centro no eixo y
 /// @param zcenter Centro no eixo z
@@ -11,8 +11,8 @@
 /// @param g Valor da cor verde
 /// @param b Valor da cor azul
 /// @param a Transparência
-void PutEllipsoid::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz, float r,
-                     float g, float b, float a) {
+PutEllipsoid::PutEllipsoid(int xcenter, int ycenter, int zcenter, int rx,
+                           int ry, int rz, float r, float g, float b, float a) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
@@ -24,6 +24,8 @@ void PutEllipsoid::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, i
     this->b = b;
     this->a = a;
 }
+
+PutEllipsoid::~PutEllipsoid() {}
 
 /// @brief Método herdado da classe abstrata pura FiguraGeometrica
 /// @param t Objeto da classe Sculptor

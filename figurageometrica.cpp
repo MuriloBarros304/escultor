@@ -1,11 +1,11 @@
 #include "figurageometrica.h"
 
-/// @brief Construtor
+/// @brief Construtor da classe abstrata
 FiguraGeometrica::FiguraGeometrica () {
     
 }
 
-/// @brief Destrutor
+/// @brief Destrutor da classe abstrata
 FiguraGeometrica::~FiguraGeometrica () {
     
 }

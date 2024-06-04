@@ -1,16 +1,18 @@
 #include "cutsphere.h"
 
-/// @brief Método para esconder uma esfera
+/// @brief Construtor da classe para esconder uma esfera
 /// @param xcenter Centro no eixo x
 /// @param ycenter Centro no eixo y
 /// @param zcenter Centro no eixo z
 /// @param radius Raio
-void CutSphere::cutSphere(int xcenter, int ycenter, int zcenter, int radius) {
+CutSphere::CutSphere(int xcenter, int ycenter, int zcenter, int radius) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
     this->radius = radius;
 }
+
+CutSphere::~CutSphere() {}
 
 /// @brief Método da classe abstrata pura FiguraGeometrica
 /// @param t Objeto da classe Sculptor

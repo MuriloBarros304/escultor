@@ -1,13 +1,14 @@
 #include "cutellipsoid.h"
 
-/// @brief Método para esconder uma elipsóide
+/// @brief Construtor da classe para esconder uma elipsóide
 /// @param xcenter Centro em no eixo x
 /// @param ycenter Centro no eixo y
 /// @param zcenter Centro no eixo z
 /// @param rx Raio em x
 /// @param ry Raio em y
 /// @param rz Raio em z
-void CutEllipsoid::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz) {
+CutEllipsoid::CutEllipsoid(int xcenter, int ycenter, int zcenter, int rx,
+                           int ry, int rz) {
     this->x0 = xcenter;
     this->y0 = ycenter;
     this->z0 = zcenter;
@@ -15,6 +16,9 @@ void CutEllipsoid::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, i
     this->ry = ry;
     this->rz = rz;
 }
+
+/// @brief Destrutor da classe
+CutEllipsoid::~CutEllipsoid() {}
 
 /// @brief Método da classe abstrata pura FiguraGeometrica
 /// @param t Objeto da classe Sculptor
