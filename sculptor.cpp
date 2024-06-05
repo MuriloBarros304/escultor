@@ -1,4 +1,5 @@
 #include "sculptor.h"
+
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -71,9 +72,7 @@ void Sculptor::putVoxel(int x, int y, int z) {
  * @param y Endereço no eixo y
  * @param z Endereço no eixo z
  */
-void Sculptor::cutVoxel(int x, int y, int z) { 
-    v[x][y][z].show = false; 
-}
+void Sculptor::cutVoxel(int x, int y, int z) { v[x][y][z].show = false; }
 
 /**
  * @brief Salva a matriz em formato .off

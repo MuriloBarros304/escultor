@@ -20,6 +20,7 @@
  * Leonardo Pessoa Cavalcanti
  */
 int main(void) { 
+    FiguraGeometrica *p; // verificar
     Sculptor sculptor(10, 10, 10);
     PutVoxel pv(5, 5, 5, 1.0, 0.0, 0.0, 1.0);
     pv.draw(sculptor);
