@@ -20,9 +20,15 @@
  * Leonardo Pessoa Cavalcanti
  */
 int main(void) { 
-    FiguraGeometrica *p; // verificar
     Sculptor sculptor(10, 10, 10);
-    PutVoxel pv(5, 5, 5, 1.0, 0.0, 0.0, 1.0);
-    pv.draw(sculptor);
+    FiguraGeometrica *p1 = new PutVoxel(5, 5, 5, 1.0, 0.0, 0.0, 1.0);
+    p1->draw(sculptor);
+    delete p1;
+    
+    FiguraGeometrica *p2 = new CutEllipsoid(5, 5, 5, 3, 3, 3);
+    p2->draw(sculptor);
+    delete p2;
+    
     sculptor.writeOFF("output.off");
+    return 0;
 }
