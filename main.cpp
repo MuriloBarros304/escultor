@@ -21,14 +21,14 @@
  */
 int main(void) { 
     Sculptor sculptor(10, 10, 10);
-    FiguraGeometrica *p1 = new PutVoxel(5, 5, 5, 1.0, 0.0, 0.0, 1.0);
+    FiguraGeometrica *p1 = new PutVoxel(1, 1, 1, 1.0, 0.0, 0.0, 1.0);
     p1->draw(sculptor);
     delete p1;
     
-    FiguraGeometrica *p2 = new CutEllipsoid(5, 5, 5, 3, 3, 3);
+    FiguraGeometrica *p2 = new PutEllipsoid(5, 5, 5, 3, 3, 3, 0.0, 0.0, 1.0, 1.0);
     p2->draw(sculptor);
     delete p2;
     
-    sculptor.writeOFF("output.off");
+    sculptor.writeOFF("../../../output.off");
     return 0;
 }
