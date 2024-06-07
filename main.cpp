@@ -1,14 +1,16 @@
+#include <vector>
+
+#include "cutbox.h"
+#include "cutellipsoid.h"
+#include "cutsphere.h"
+#include "cutvoxel.h"
+#include "figurageometrica.h"
+#include "putbox.h"
+#include "putellipsoid.h"
+#include "putsphere.h"
+#include "putvoxel.h"
 #include "sculptor.h"
 #include "voxel.h"
-#include "figurageometrica.h"
-#include "cutvoxel.h"
-#include "putvoxel.h"
-#include "putellipsoid.h"
-#include "cutellipsoid.h"
-#include "putsphere.h"
-#include "cutsphere.h"
-#include "cutbox.h"
-#include "putbox.h"
 
 /**
  * \mainpage
@@ -19,16 +21,22 @@
  * Murilo de Lima Barros \n
  * Leonardo Pessoa Cavalcanti
  */
-int main(void) { 
+int main(void) {
+    std::vector<FiguraGeometrica *> vetor;
     Sculptor sculptor(10, 10, 10);
+
     FiguraGeometrica *p1 = new PutVoxel(1, 1, 1, 1.0, 0.0, 0.0, 1.0);
     p1->draw(sculptor);
-    delete p1;
-    
-    FiguraGeometrica *p2 = new PutEllipsoid(5, 5, 5, 3, 3, 3, 0.0, 0.0, 1.0, 1.0);
+    vetor.push_back(p1);
+
+    FiguraGeometrica *p2 =
+        new PutEllipsoid(5, 5, 5, 3, 3, 3, 0.0, 0.0, 1.0, 1.0);
     p2->draw(sculptor);
-    delete p2;
-    
+    vetor.push_back(p2);
+    for (int i = 0; i < vetor.size(); i++) {
+        delete vetor[i];
+    }
+
     sculptor.writeOFF("../../../output.off");
     return 0;
 }
