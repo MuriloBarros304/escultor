@@ -11,9 +11,9 @@
  * Leonardo Pessoa Cavalcanti
  */
 int main(void) {
-    ReadTXT teste("../../../input.txt");
-    Sculptor figura(teste.getX(), teste.getY(), teste.getZ());
-    teste.draw(figura);
+    ReadTXT arquivo("../../../input.txt");
+    Sculptor figura(arquivo.getX(), arquivo.getY(), arquivo.getZ());
+    arquivo.draw(figura);
     figura.writeOFF("../../../output.off");
     return 0;
 }
