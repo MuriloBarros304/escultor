@@ -1,7 +1,5 @@
 #include "sculptor.h"
-#include "figurageometrica.h"
-#include "putellipsoid.h"
-#include "putvoxel.h"
+#include "voxel.h"
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -66,7 +64,7 @@ void Sculptor::putVoxel(int x, int y, int z) {
     v[x][y][z].g = g;
     v[x][y][z].b = b;
     v[x][y][z].a = a;
-    std::cout<<"entrou em putVoxel"<<"\n";
+    //std::cout<<"entrou em putVoxel"<<"\n";
 }
 
 /**

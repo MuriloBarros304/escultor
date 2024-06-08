@@ -16,7 +16,6 @@
 ReadTXT::ReadTXT(const char* filename) {
 std::ifstream fin;
     std::string s;
-    std::vector<FiguraGeometrica *> vetor;
 
     fin.open(filename);
     if (!fin.is_open()) {
@@ -32,7 +31,7 @@ std::ifstream fin;
                 nx = x;
                 ny = y;
                 nz = z;
-                std::cout << "dimensões lidas: " << nx << ", " << ny << ", " << nz << "\n";
+                std::cout << "Dimensões lidas: " << nx << ", " << ny << ", " << nz << "\n";
             }
             else if (s.compare("putvoxel") == 0) {
                 int x0, y0, z0;
@@ -53,7 +52,6 @@ std::ifstream fin;
                 fin >> y1 >> z0 >> z1;
                 fin >> r >> g >> b >> a;
                 vetor.push_back(new PutBox(x0, x1, y0, y1, z0, z1, r, g, b, a));
-                //std::cout<<"putbox: "<< x0 << " " << x1 << " " << y0 << " " << y1 << " " << z0 << " " << z1 << " " << r << g << b << a << "\n";
             }
             else if (s.compare("cutbox") == 0) {
                 int x0, y0, z0, x1, y1, z1;
@@ -92,12 +90,11 @@ std::ifstream fin;
             }
         }
     }
-    
     fin.close();
     if (vetor.empty()) {
-        std::cout << "o vetor de figuras geométricas está vazio" << "\n";
+        std::cout << "O vetor de figuras geométricas está vazio" << "\n";
     } else {
-        std::cout << "o vetor de figuras geométricas foi preenchido corretamente" << "\n";
+        std::cout << "O vetor de figuras geométricas foi preenchido corretamente" << "\n";
     }
 }
 
@@ -110,7 +107,6 @@ ReadTXT::~ReadTXT() {
 
 void ReadTXT::draw(Sculptor &t) {
     for (auto it: vetor){
-        std::cout<<"acessando draw...\n";
         it->draw(t);
     }
 }
