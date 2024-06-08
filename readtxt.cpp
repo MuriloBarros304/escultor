@@ -40,7 +40,6 @@ std::ifstream fin;
                 fin >> x0 >> y0 >> z0;
                 fin >> r >> g >> b >> a;
                 vetor.push_back(new PutVoxel(x0, y0, z0, r, g, b, a));
-                std::cout<<"putvoxel\n";
             }
             else if (s.compare("cutvoxel") == 0) {
                 int x0, y0, z0;

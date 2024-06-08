@@ -66,7 +66,7 @@ void Sculptor::putVoxel(int x, int y, int z) {
     v[x][y][z].g = g;
     v[x][y][z].b = b;
     v[x][y][z].a = a;
-    std::cout<<"v: "<<v[x][y][z].show<<"\n";
+    std::cout<<"entrou em putVoxel"<<"\n";
 }
 
 /**
