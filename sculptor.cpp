@@ -1,5 +1,7 @@
 #include "sculptor.h"
-
+#include "figurageometrica.h"
+#include "putellipsoid.h"
+#include "putvoxel.h"
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -169,3 +171,6 @@ void Sculptor::writeOFF(const char *filename) {
     std::cout << "Arquivo salvo\n";
     fout.close();
 }
+
+    
+

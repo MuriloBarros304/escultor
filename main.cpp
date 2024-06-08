@@ -1,16 +1,5 @@
-#include <vector>
-
-#include "cutbox.h"
-#include "cutellipsoid.h"
-#include "cutsphere.h"
-#include "cutvoxel.h"
-#include "figurageometrica.h"
-#include "putbox.h"
-#include "putellipsoid.h"
-#include "putsphere.h"
-#include "putvoxel.h"
-#include "sculptor.h"
-#include "voxel.h"
+#include <iostream>
+#include "readtxt.h"
 
 /**
  * \mainpage
@@ -22,7 +11,11 @@
  * Leonardo Pessoa Cavalcanti
  */
 int main(void) {
-    std::vector<FiguraGeometrica *> vetor;
+    ReadTXT teste("../../../input.txt");
+    Sculptor figura(teste.getX(), teste.getY(), teste.getZ());
+    std::cout << "lido: " << teste.getX() << ", " << teste.getY() << ", " << teste.getZ() << "\n";
+    teste.draw(figura);
+/*     std::vector<FiguraGeometrica *> vetor;
     Sculptor sculptor(10, 10, 10);
 
     FiguraGeometrica *p1 = new PutVoxel(1, 1, 1, 1.0, 0.0, 0.0, 1.0);
@@ -35,8 +28,8 @@ int main(void) {
     vetor.push_back(p2);
     for (int i = 0; i < vetor.size(); i++) {
         delete vetor[i];
-    }
+    } */
 
-    sculptor.writeOFF("../../../output.off");
+    figura.writeOFF("../../../output.off");
     return 0;
 }
