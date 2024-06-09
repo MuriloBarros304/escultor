@@ -8,12 +8,12 @@ class Sculptor {
    public:
     Voxel*** v;                           // Matriz 3D
     int nx, ny, nz;                       // Dimensões
-    float r, g, b, a;                     // Cor atual de desenho
-    Sculptor(int _nx, int _ny, int _nz);  // Construtor com argumentos
+    float r, g, b, a;                     // Cor e transparência atual de desenho
+    Sculptor(int nx, int ny, int nz);  // Construtor com argumentos
     ~Sculptor();                          // Destrutor
-    void setColor(float _r, float _g, float _b, float _a);
-    void putVoxel(int x, int y, int z);
-    void cutVoxel(int x, int y, int z);
+    void setColor(float r, float g, float b, float a);             // Método para alterar cor
+    void putVoxel(int x, int y, int z);   // Método para desenhar um voxel
+    void cutVoxel(int x, int y, int z);   // Método para esconder um voxel
     void writeOFF(const char* filename);
 };
 

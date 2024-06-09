@@ -7,14 +7,14 @@
 /**
  * @brief Construtor da classe, recebe as coordenadas do tamanho da modelagem e
  * aloca memória para a criação de uma matriz de três dimensões
- * @param _nx Número de voxels no eixo x
- * @param _ny Número de voxels no eixo y
- * @param _nz Número de voxels no eixo z
+ * @param nx Número de voxels no eixo x
+ * @param ny Número de voxels no eixo y
+ * @param nz Número de voxels no eixo z
  */
-Sculptor::Sculptor(int _nx, int _ny, int _nz) {  // Construtor com argumentos
-    nx = _nx;
-    ny = _ny;
-    nz = _nz;
+Sculptor::Sculptor(int nx, int ny, int nz) {  // Construtor com argumentos
+    this->nx = nx;
+    this->ny = ny;
+    this->nz = nz;
     int i, j;
     if (nx <= 0 or ny <= 0 or nz <= 0) {
         throw std::runtime_error("Erro nas dimensões da matriz\n");
@@ -77,8 +77,8 @@ void Sculptor::cutVoxel(int x, int y, int z) { v[x][y][z].show = false; }
 
 /**
  * @brief Salva a matriz em formato .off
- * @param filename Nome do arquivo, exemplo: "quarto.off" para salvar no
- * diretório do projeto, ou adicionar caminho absoluto
+ * @param filename Nome do arquivo, exemplo: "output.off" para salvar no
+ * diretório do projeto, ou adicionar caminho relativo
  */
 void Sculptor::writeOFF(const char *filename) {
     int nVoxel = 0, f = 0, i, j, k;
@@ -167,7 +167,7 @@ void Sculptor::writeOFF(const char *filename) {
             }
         }
     }
-    std::cout << "Arquivo salvo\n";
+    std::cout << "Arquivo de saída salvo\n";
     fout.close();
 }
 
