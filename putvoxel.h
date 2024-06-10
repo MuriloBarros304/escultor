@@ -12,4 +12,4 @@ class PutVoxel : public FiguraGeometrica {
     ~PutVoxel();                                                       // Destrutor
     virtual void draw(Sculptor &t);                                    // Método herdado de FiguraGeometrica
 };
-#endif  // CUTVOXEL_H
+#endif  // PUTVOXEL_H

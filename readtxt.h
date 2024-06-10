@@ -1,6 +1,5 @@
 #ifndef READTXT_H
 #define READTXT_H
-#include <string>
 #include <vector>
 #include "figurageometrica.h"
 
