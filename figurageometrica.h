@@ -14,7 +14,7 @@ class FiguraGeometrica {
 
    public:
     FiguraGeometrica();
-    ~FiguraGeometrica();
+    virtual ~FiguraGeometrica();
     virtual void draw(Sculptor &t) = 0;
 };
 
