@@ -1,8 +1,10 @@
 #include "sculptor.h"
-#include "voxel.h"
+
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+
+#include "voxel.h"
 
 /**
  * @brief Construtor da classe, recebe as coordenadas do tamanho da modelagem e
@@ -64,7 +66,7 @@ void Sculptor::putVoxel(int x, int y, int z) {
     v[x][y][z].g = g;
     v[x][y][z].b = b;
     v[x][y][z].a = a;
-    //std::cout<<"entrou em putVoxel"<<"\n";
+    // std::cout<<"entrou em putVoxel"<<"\n";
 }
 
 /**
@@ -170,6 +172,3 @@ void Sculptor::writeOFF(const char *filename) {
     std::cout << "Arquivo de saída salvo\n";
     fout.close();
 }
-
-    
-

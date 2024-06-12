@@ -1,7 +1,9 @@
 #include "readtxt.h"
+
 #include <fstream>
 #include <iostream>
 #include <vector>
+
 #include "cutbox.h"
 #include "cutellipsoid.h"
 #include "cutsphere.h"
@@ -33,8 +35,8 @@ ReadTXT::ReadTXT(const char* filename) {
             nx = x;
             ny = y;
             nz = z;
-            std::cout << "Dimensões lidas: " << nx << ", " << ny << ", "
-                        << nz << "\n";
+            std::cout << "Dimensões lidas: " << nx << ", " << ny << ", " << nz
+                      << "\n";
         } else if (s.compare("putvoxel") == 0) {
             int x0, y0, z0;
             float r, g, b, a;
@@ -63,22 +65,21 @@ ReadTXT::ReadTXT(const char* filename) {
             float r, g, b, a;
             fin >> xcenter >> ycenter >> zcenter >> radius;
             fin >> r >> g >> b >> a;
-            vetor.push_back(new PutSphere(xcenter, ycenter, zcenter, radius,
-                                            r, g, b, a));
+            vetor.push_back(
+                new PutSphere(xcenter, ycenter, zcenter, radius, r, g, b, a));
         } else if (s.compare("cutsphere") == 0) {
             int xcenter, ycenter, zcenter, radius;
             float r, g, b, a;
             fin >> xcenter >> ycenter >> zcenter >> radius;
-            vetor.push_back(
-                new CutSphere(xcenter, ycenter, zcenter, radius));
+            vetor.push_back(new CutSphere(xcenter, ycenter, zcenter, radius));
         } else if (s.compare("putellipsoid") == 0) {
             int xcenter, ycenter, zcenter, rx, ry, rz;
             float r, g, b, a;
             fin >> xcenter >> ycenter >> zcenter;
             fin >> rx >> ry >> rz;
             fin >> r >> g >> b >> a;
-            vetor.push_back(new PutEllipsoid(xcenter, ycenter, zcenter, rx,
-                                                ry, rz, r, g, b, a));
+            vetor.push_back(new PutEllipsoid(xcenter, ycenter, zcenter, rx, ry,
+                                             rz, r, g, b, a));
         } else if (s.compare("cutellipsoid") == 0) {
             int xcenter, ycenter, zcenter, rx, ry, rz;
             float r, g, b, a;
@@ -93,7 +94,8 @@ ReadTXT::ReadTXT(const char* filename) {
     if (vetor.empty()) {
         std::cout << "O vetor de figuras geométricas está vazio\n";
     } else {
-        std::cout << "O vetor de figuras geométricas foi preenchido corretamente\n";
+        std::cout
+            << "O vetor de figuras geométricas foi preenchido corretamente\n";
     }
 }
 

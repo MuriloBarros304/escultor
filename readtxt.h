@@ -1,6 +1,7 @@
 #ifndef READTXT_H
 #define READTXT_H
 #include <vector>
+
 #include "figurageometrica.h"
 
 /// @brief Classe para ler o arquivo de comandos em formato TXT e alocar memória

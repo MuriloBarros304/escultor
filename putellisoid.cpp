@@ -25,6 +25,7 @@ PutEllipsoid::PutEllipsoid(int xcenter, int ycenter, int zcenter, int rx,
     this->a = a;
 }
 
+/// @brief Destrutor da classe
 PutEllipsoid::~PutEllipsoid() {}
 
 /// @brief Método herdado da classe abstrata pura FiguraGeometrica

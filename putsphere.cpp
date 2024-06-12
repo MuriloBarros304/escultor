@@ -21,6 +21,7 @@ PutSphere::PutSphere(int xcenter, int ycenter, int zcenter, int radius, float r,
     this->a = a;
 }
 
+/// @brief Destrutor da classe
 PutSphere::~PutSphere() {}
 
 /// @brief Método da classe abstrata pura FiguraGeometrica

@@ -12,6 +12,7 @@ CutSphere::CutSphere(int xcenter, int ycenter, int zcenter, int radius) {
     this->radius = radius;
 }
 
+/// @brief Destrutor da classe
 CutSphere::~CutSphere() {}
 
 /// @brief Método da classe abstrata pura FiguraGeometrica

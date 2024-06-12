@@ -16,6 +16,7 @@ CutBox::CutBox(int x0, int x1, int y0, int y1, int z0, int z1) {
     this->z1 = z1;
 }
 
+/// @brief Destrutor da classe
 CutBox::~CutBox() {}
 
 /// @brief Método da classe abstrata pura FiguraGeometrica

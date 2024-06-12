@@ -1,4 +1,5 @@
 #include "putvoxel.h"
+
 #include <iostream>
 
 /// @brief Construtor da classe para desenhar um voxel
@@ -26,5 +27,4 @@ PutVoxel::~PutVoxel() {}
 void PutVoxel::draw(Sculptor &t) {
     t.setColor(r, g, b, a);
     t.putVoxel(x0, y0, z0);
-    //std::cout<<"entrou em PutVoxel::draw()";
 }

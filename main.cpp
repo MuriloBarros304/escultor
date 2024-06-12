@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "readtxt.h"
 
 /**
@@ -10,7 +11,7 @@
  * Murilo de Lima Barros \n
  * Leonardo Pessoa Cavalcanti
  */
-int main(void) {         
+int main(void) {
     ReadTXT arquivo("../../../input.txt");
     Sculptor figura(arquivo.getX(), arquivo.getY(), arquivo.getZ());
     arquivo.draw(figura);
