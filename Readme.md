@@ -10,7 +10,17 @@
 - Documentação do programa: https://murilobarros304.github.io/minha-pag/doc-escultor/
 
 ## Modo de uso
-- Crie um arquivo contendo os comandos de desenho seguindo o exemplo input.txt
+- Clone o repositório
+- No VS Code utilizando a extensão CMake Tools, pressione Ctrl+Shift+p para acessar os comandos:
+1. Quick Start
+    - Selecionar o compilador de preferência 
+2. Selecionar kit
+3. Selecionar variant, exemplo: Debug
+4. Configurar
+- Compilar, a saída deve ser 0
+- Crie um arquivo contendo os comandos de desenho seguindo o exemplo:
+    >putbox 30 40 10 25 13 80 0.5 0.8 1.0 1.0
+    >cutbox 35 36 12 24 16 75
 - Adicione o caminho relativo do arquivo de entrada no ReadTXT
 - Adicione o caminho relativo do arquivo de saída no writeOFF
 - Compile e execute o projeto
