@@ -19,8 +19,7 @@
 4. Configurar
 - Compilar, a saída deve ser 0
 - Crie um arquivo contendo os comandos de desenho seguindo o exemplo: <br>
-    `putbox 30 40 10 25 13 80 0.5 0.8 1.0 1.0 <br>
-    cutbox 35 36 12 24 16 75`
+    `putbox 30 40 10 25 13 80 0.5 0.8 1.0 1.0`
 - Adicione o caminho relativo do arquivo de entrada no ReadTXT
 - Adicione o caminho relativo do arquivo de saída no writeOFF
 - Compile e execute o projeto
