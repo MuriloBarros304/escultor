@@ -2,6 +2,8 @@
 
 #include <fstream>
 #include <iostream>
+#include <sstream>
+#include <string>
 #include <vector>
 
 #include "cutbox.h"
@@ -97,6 +99,76 @@ ReadTXT::ReadTXT(const char* filename) {
         std::cout
             << "O vetor de figuras geométricas foi preenchido corretamente\n";
     }
+}
+
+/// @brief Construtor vazio para o modo interativo
+ReadTXT::ReadTXT() {
+    nx = 0;
+    ny = 0;
+    nz = 0;
+}
+
+/// @brief Interpreta uma linha de comando (modo interativo)
+/// @param line String contendo o comando e seus parâmetros
+FiguraGeometrica* ReadTXT::parseLine(std::string line) {
+    std::stringstream ss(line);
+    std::string s;
+    ss >> s;
+
+    if (s.compare("dim") == 0) {
+        int x, y, z;
+        ss >> x >> y >> z;
+        nx = x;
+        ny = y;
+        nz = z;
+        std::cout << "Dimensões lidas: " << nx << ", " << ny << ", " << nz << "\n";
+        return nullptr;
+    } else if (s.compare("putvoxel") == 0) {
+        int x0, y0, z0;
+        float r, g, b, a;
+        ss >> x0 >> y0 >> z0;
+        ss >> r >> g >> b >> a;
+        return new PutVoxel(x0, y0, z0, r, g, b, a);
+    } else if (s.compare("cutvoxel") == 0) {
+        int x0, y0, z0;
+        ss >> x0 >> y0 >> z0;
+        return new CutVoxel(x0, y0, z0);
+    } else if (s.compare("putbox") == 0) {
+        int x0, y0, z0, x1, y1, z1;
+        float r, g, b, a;
+        ss >> x0 >> x1 >> y0;
+        ss >> y1 >> z0 >> z1;
+        ss >> r >> g >> b >> a;
+        return new PutBox(x0, x1, y0, y1, z0, z1, r, g, b, a);
+    } else if (s.compare("cutbox") == 0) {
+        int x0, y0, z0, x1, y1, z1;
+        ss >> x0 >> x1 >> y0;
+        ss >> y1 >> z0 >> z1;
+        return new CutBox(x0, x1, y0, y1, z0, z1);
+    } else if (s.compare("putsphere") == 0) {
+        int xcenter, ycenter, zcenter, radius;
+        float r, g, b, a;
+        ss >> xcenter >> ycenter >> zcenter >> radius;
+        ss >> r >> g >> b >> a;
+        return new PutSphere(xcenter, ycenter, zcenter, radius, r, g, b, a);
+    } else if (s.compare("cutsphere") == 0) {
+        int xcenter, ycenter, zcenter, radius;
+        ss >> xcenter >> ycenter >> zcenter >> radius;
+        return new CutSphere(xcenter, ycenter, zcenter, radius);
+    } else if (s.compare("putellipsoid") == 0) {
+        int xcenter, ycenter, zcenter, rx, ry, rz;
+        float r, g, b, a;
+        ss >> xcenter >> ycenter >> zcenter;
+        ss >> rx >> ry >> rz;
+        ss >> r >> g >> b >> a;
+        return new PutEllipsoid(xcenter, ycenter, zcenter, rx, ry, rz, r, g, b, a);
+    } else if (s.compare("cutellipsoid") == 0) {
+        int xcenter, ycenter, zcenter, rx, ry, rz;
+        ss >> xcenter >> ycenter >> zcenter;
+        ss >> rx >> ry >> rz;
+        return new CutEllipsoid(xcenter, ycenter, zcenter, rx, ry, rz);
+    }
+    return nullptr;
 }
 
 /// @brief Destrutor, libera memória alocada

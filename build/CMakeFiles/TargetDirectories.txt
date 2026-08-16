@@ -1,0 +1,5 @@
+/home/murilo/Desktop/projetos/escultor/build/CMakeFiles/escultor.dir
+/home/murilo/Desktop/projetos/escultor/build/CMakeFiles/package.dir
+/home/murilo/Desktop/projetos/escultor/build/CMakeFiles/package_source.dir
+/home/murilo/Desktop/projetos/escultor/build/CMakeFiles/edit_cache.dir
+/home/murilo/Desktop/projetos/escultor/build/CMakeFiles/rebuild_cache.dir

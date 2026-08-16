@@ -1,6 +1,7 @@
 #ifndef READTXT_H
 #define READTXT_H
 #include <vector>
+#include <string>
 
 #include "figurageometrica.h"
 
@@ -16,8 +17,10 @@ class ReadTXT {
     std::vector<FiguraGeometrica*>::iterator it;
 
    public:
+    ReadTXT();                      // Construtor vazio para modo interativo
     ReadTXT(const char* filename);  // Construtor
     ~ReadTXT();                     // Destrutor
+    FiguraGeometrica* parseLine(std::string line); // Interpreta uma linha de comando
     void draw(Sculptor& t);         // Chama o método draw() herdado da classe
                                     // FiguraGeometrica para a figura desenhada
     int getX();                     // Retorna o tamanho em x da matriz
