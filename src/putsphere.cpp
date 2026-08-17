@@ -38,7 +38,7 @@ void PutSphere::draw(Sculptor &t) {
     zi = z0 - radius;
     zf = z0 + radius;
     for (i = xi; i <= xf; i++) {
-        dx = i - x0 * (i - x0);
+        dx = (i - x0) * (i - x0);
         for (j = yi; j <= yf; j++) {
             dy = (j - y0) * (j - y0);
             for (k = zi; k <= zf; k++) {
